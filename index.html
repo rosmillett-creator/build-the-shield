@@ -1,157 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>When the System Fails You, Build the Shield — Voice-Driven Presentation</title>
+<title>When the System Fails You, Build the Shield</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow:hidden;background:#12161f;font-family:'Georgia',serif}
+html,body{position:fixed;top:0;left:0;width:100vw;height:100vh;overflow:hidden;background:#0a0d14;font-family:Georgia,serif;z-index:2147483647}
 
-#stage{position:absolute;inset:0;overflow:hidden;background:#12161f}
-.scene-img{
-  position:absolute;inset:0;opacity:0;
-  transition:opacity 4s ease-in-out;
-  background-size:cover;background-position:center;background-repeat:no-repeat;
-  filter:brightness(1.15) saturate(1.05);
-}
+#stage{position:fixed;inset:0;overflow:hidden;background:#0a0d14}
+.scene-img{position:absolute;inset:0;opacity:0;transition:opacity 4s ease-in-out;background-size:cover;background-position:center;background-repeat:no-repeat;filter:brightness(1.15) saturate(1.05)}
 .scene-img.active{opacity:1;animation:kb 20s ease-out forwards}
 @keyframes kb{from{transform:scale(1.0)}to{transform:scale(1.06)}}
 
-#vig{position:absolute;inset:0;z-index:4;pointer-events:none;
-  background:radial-gradient(ellipse at center,transparent 80%,rgba(8,11,20,0.18) 100%)}
+#vig{position:absolute;inset:0;z-index:4;pointer-events:none;background:radial-gradient(ellipse at center,transparent 80%,rgba(8,11,20,0.18) 100%)}
 #pcv{position:absolute;inset:0;z-index:3;pointer-events:none}
 
-#iconLayer{position:absolute;inset:0;z-index:5;pointer-events:none;
-  display:flex;align-items:center;justify-content:center;opacity:0;
-  transition:opacity 2s ease}
+#iconLayer{position:absolute;inset:0;z-index:5;pointer-events:none;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 2s ease}
 #iconLayer.on{opacity:1}
-#iconBox{
-  background:rgba(13,92,92,0.15);backdrop-filter:blur(8px);
-  border:1px solid rgba(232,201,122,0.25);border-radius:24px;
-  padding:40px 50px;display:flex;flex-direction:column;align-items:center;gap:18px;
-}
+#iconBox{background:rgba(13,92,92,0.15);backdrop-filter:blur(8px);border:1px solid rgba(232,201,122,0.25);border-radius:24px;padding:40px 50px;display:flex;flex-direction:column;align-items:center;gap:18px}
 #iconBox svg{width:100px;height:100px;filter:drop-shadow(0 4px 20px rgba(232,201,122,0.3))}
 #iconLabel{color:#e8c97a;text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 12px rgba(0,0,0,0.6);font-size:22px;font-weight:300;letter-spacing:2px;text-transform:uppercase}
 #iconDesc{color:rgba(230,226,219,0.6);font-size:14px;font-family:'Helvetica Neue',sans-serif;letter-spacing:1px}
 
-#shotLayer{position:absolute;z-index:5;pointer-events:none;opacity:0;transition:opacity 2s ease}
-#shotLayer.on{opacity:1}
-#shotBox{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70%;max-width:800px}
-#shotBox img{width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.6),0 0 0 1px rgba(232,201,122,0.1)}
-#shotCaption{color:rgba(232,201,122,0.5);font-size:13px;text-align:center;margin-top:14px;font-family:'Helvetica Neue',sans-serif;letter-spacing:2px;text-transform:uppercase}
-
-#transcriptBar{
-  position:absolute;bottom:0;left:0;right:0;z-index:10;
-  padding:14px 40px 18px;
-  background:linear-gradient(to top,rgba(0,0,0,0.92) 20%,rgba(0,0,0,0.7) 60%,transparent);
-  text-align:center;min-height:40px;
-  display:flex;align-items:flex-end;justify-content:center;
-}
-#transcriptText{
-  color:rgba(230,226,219,0.92);font-size:20px;line-height:1.6;
-  font-family:'Helvetica Neue',sans-serif;font-weight:300;letter-spacing:0.5px;
-  max-width:900px;text-shadow:0 2px 8px rgba(0,0,0,0.8);
-}
-#transcriptText .word{opacity:0;transition:opacity 0.3s ease;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.9),0 0 8px rgba(0,0,0,0.7);}
+#transcriptBar{position:absolute;bottom:0;left:0;right:0;z-index:10;padding:14px 40px 18px;background:linear-gradient(to top,rgba(0,0,0,0.92) 20%,rgba(0,0,0,0.7) 60%,transparent);text-align:center;min-height:40px;display:flex;align-items:flex-end;justify-content:center}
+#transcriptText{color:rgba(230,226,219,0.92);font-size:20px;line-height:1.6;font-family:'Helvetica Neue',sans-serif;font-weight:300;letter-spacing:0.5px;max-width:900px;text-shadow:0 2px 8px rgba(0,0,0,0.8)}
+#transcriptText .word{opacity:0;transition:opacity 0.3s ease;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.9),0 0 8px rgba(0,0,0,0.7)}
 #transcriptText .word.show{opacity:1}
 #transcriptText .word.current{color:#e8c97a;text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 12px rgba(0,0,0,0.6);opacity:1;font-weight:400}
 
-#sceneLabel{
-  position:absolute;top:32px;left:40px;z-index:10;
-  background:rgba(0,0,0,0.8);padding:8px 18px;border-radius:8px;
-  color:rgba(232,201,122,169,107,0.35);font-size:11px;letter-spacing:4px;text-transform:uppercase;
-  font-family:'Helvetica Neue',sans-serif;opacity:0;transition:opacity 2s ease;
-}
-
-/* Memory overlay for opening scene */
-.memory-overlay{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:28%;height:32%;background-image:url('assets/fbf4b5953_1000122463.jpeg');background-size:cover;background-position:center;border-radius:50%;opacity:0;filter:blur(1px) brightness(1.1);box-shadow:0 0 60px 20px rgba(255,255,255,0.25),inset 0 0 40px rgba(255,255,255,0.15);transition:opacity 2s ease;z-index:2;pointer-events:none;}
-.memory-overlay.active{opacity:0.55;}
-.memory-overlay::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,255,255,0.15) 0%,transparent 70%);pointer-events:none;}
+#sceneLabel{position:absolute;top:32px;left:40px;z-index:10;background:rgba(0,0,0,0.8);padding:8px 18px;border-radius:8px;color:rgba(232,201,122,0.6);font-size:11px;letter-spacing:4px;text-transform:uppercase;font-family:'Helvetica Neue',sans-serif;opacity:0;transition:opacity 2s ease}
 #sceneLabel.on{opacity:1}
 
-#dysphilterMark{
-  position:absolute;top:32px;right:40px;z-index:10;
-  color:rgba(232,201,122,0.2);font-size:11px;letter-spacing:3px;
-  font-family:'Helvetica Neue',sans-serif;opacity:0;transition:opacity 3s ease;
-}
+.memory-overlay{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:28%;height:32%;background-image:url('assets/fbf4b5953_1000122463.jpeg');background-size:cover;background-position:center;border-radius:50%;opacity:0;filter:blur(1px) brightness(1.1);box-shadow:0 0 60px 20px rgba(255,255,255,0.25),inset 0 0 40px rgba(255,255,255,0.15);transition:opacity 2s ease;z-index:2;pointer-events:none}
+.memory-overlay.active{opacity:0.55}
+.memory-overlay::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(255,255,255,0.15) 0%,transparent 70%);pointer-events:none}
+
+#dysphilterMark{position:absolute;top:32px;right:40px;z-index:10;color:rgba(232,201,122,0.2);font-size:11px;letter-spacing:3px;font-family:'Helvetica Neue',sans-serif;opacity:0;transition:opacity 3s ease}
 #dysphilterMark.on{opacity:1}
 
-#progressLine{position:absolute;bottom:0;left:0;height:2px;z-index:12;
-  background:linear-gradient(to right,#c4a96b,#0D5C5C);width:0%;transition:width 0.3s ease}
+#progressLine{position:absolute;bottom:0;left:0;height:2px;z-index:12;background:linear-gradient(to right,#c4a96b,#0D5C5C);width:0%;transition:width 0.3s ease}
 
-#titlecard{position:absolute;inset:0;z-index:30;background:#0a0d14;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  transition:opacity 3s ease}
+#titlecard{position:absolute;inset:0;z-index:30;background:#0a0d14;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 3s ease}
 #titlecard.gone{opacity:0;pointer-events:none}
-#titlecard h1{color:#e6e2db;font-size:36px;font-weight:400;letter-spacing:2px;
-  text-align:center;max-width:600px;line-height:1.5;margin-bottom:14px}
-#titlecard .sub{color:#5a6a7a;font-size:13px;letter-spacing:4px;
-  text-transform:uppercase;margin-bottom:40px}
+#titlecard h1{color:#e6e2db;font-size:36px;font-weight:400;letter-spacing:2px;text-align:center;max-width:600px;line-height:1.5;margin-bottom:14px}
+#titlecard .sub{color:#5a6a7a;font-size:13px;letter-spacing:4px;text-transform:uppercase;margin-bottom:40px}
 
-#dropzone{
-  border:2px dashed rgba(232,201,122,0.3);border-radius:16px;padding:40px 60px;
-  display:flex;flex-direction:column;align-items:center;gap:12px;
-  cursor:pointer;transition:all 0.4s ease;
-}
-#dropzone:hover{border-color:rgba(232,201,122,0.6);background:rgba(232,201,122,0.03)}
-#dropzone p{color:rgba(232,201,122,0.5);font-size:14px;letter-spacing:1px;font-family:'Helvetica Neue',sans-serif}
-#dropzone .big{color:#e6e2db;font-size:18px;margin-bottom:4px}
-#audioInput{display:none}
-#audioName{color:rgba(230,226,219,0.4);font-size:13px;margin-top:20px;font-family:'Helvetica Neue',sans-serif;display:none}
-
-#startbtn{margin-top:28px;padding:14px 48px;border:1px solid rgba(232,201,122,0.3);
-  background:transparent;color:#e6e2db;cursor:pointer;font-size:15px;letter-spacing:2px;
-  font-family:'Georgia',serif;transition:all 0.4s;display:none}
+#startbtn{margin-top:28px;padding:14px 48px;border:1px solid rgba(232,201,122,0.3);background:transparent;color:#e6e2db;cursor:pointer;font-size:15px;letter-spacing:2px;font-family:Georgia,serif;transition:all 0.4s}
 #startbtn:hover{background:rgba(232,201,122,0.08);border-color:rgba(232,201,122,0.6)}
-#startbtn.ready{display:block}
 
-#demoBtn{margin-top:14px;padding:10px 32px;border:1px solid rgba(255,255,255,0.1);
-  background:transparent;color:rgba(230,226,219,0.35);cursor:pointer;font-size:12px;
-  letter-spacing:2px;font-family:'Helvetica Neue',sans-serif;transition:all 0.4s;
-  text-transform:uppercase}
-#demoBtn:hover{color:rgba(232,201,122,0.5);border-color:rgba(232,201,122,0.2)}
-
-#endcard{position:absolute;inset:0;z-index:30;background:#0a0d14;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity 4s ease}
+#endcard{position:absolute;inset:0;z-index:30;background:#0a0d14;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 4s ease}
 #endcard.on{opacity:1;pointer-events:auto}
-#endcard .et{color:#e6e2db;font-size:30px;font-weight:400;letter-spacing:1px;
-  text-align:center;line-height:1.6;max-width:520px;margin-bottom:40px}
+#endcard .et{color:#e6e2db;font-size:30px;font-weight:400;letter-spacing:1px;text-align:center;line-height:1.6;max-width:520px;margin-bottom:40px}
 #endcard .qr-row{display:flex;gap:60px;margin-bottom:30px}
 #endcard .qr-item{display:flex;flex-direction:column;align-items:center;gap:12px}
 #endcard .qr-item img{width:140px;height:140px;border-radius:8px;border:1px solid rgba(232,201,122,0.15)}
-#endcard .qr-label{color:rgba(232,201,122,0.5);font-size:11px;letter-spacing:2px;
-  text-transform:uppercase;font-family:'Helvetica Neue',sans-serif}
+#endcard .qr-label{color:rgba(232,201,122,0.5);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Helvetica Neue',sans-serif}
 #endcard .es{color:#4a5a6a;font-size:13px;margin-top:24px;letter-spacing:3px}
 #endcard .atw{color:rgba(230,226,219,0.4);font-size:12px;margin-top:8px;font-family:'Helvetica Neue',sans-serif}
-
-html,body{
-  position:fixed!important;
-  top:0!important;left:0!important;
-  width:100vw!important;height:100vh!important;
-  margin:0!important;padding:0!important;
-  overflow:hidden!important;
-  background:#12161f!important;
-  z-index:2147483647!important;
-}
-#stage{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;}
-
-</style>
-
-<style>
-html, body {
-  position: fixed !important;
-  top: 0 !important; left: 0 !important;
-  width: 100vw !important; height: 100vh !important;
-  margin: 0 !important; padding: 0 !important;
-  overflow: hidden !important;
-  background: #0a0d14 !important;
-}
-#stage {
-  position: fixed !important;
-  inset: 0 !important;
-  width: 100vw !important; height: 100vh !important;
-}
 </style>
 </head>
 <body>
@@ -161,24 +67,16 @@ html, body {
 <canvas id="pcv"></canvas>
 
 <div id="iconLayer"><div id="iconBox"><div id="iconSvg"></div><div id="iconLabel"></div><div id="iconDesc"></div></div></div>
-<div id="shotLayer"><div id="shotBox"><img id="shotImg" src=""><div id="shotCaption"></div></div></div>
 <div id="sceneLabel"></div>
-<div id="dysphilterMark">DysPhilter™</div>
+<div id="dysphilterMark">DysPhilter&trade;</div>
 
 <div id="transcriptBar"><div id="transcriptText"></div></div>
 <div id="progressLine"></div>
 
 <div id="titlecard">
   <h1>When the System Fails You,<br>Build the Shield</h1>
-  <p class="sub">A Voice-Driven Visual Story · Ros Millett</p>
-  <div id="dropzone" style="display:none">
-    <p class="big">Drop your audio file here</p>
-    <p>or click to browse — MP3, WAV, M4A</p>
-  </div>
-  <input type="file" id="audioInput" accept="audio/*">
-  <div id="audioName"></div>
-  <button id="startbtn" style="display:block">Begin</button>
-  <button id="demoBtn">Preview without audio</button>
+  <p class="sub">A Voice-Driven Visual Story &middot; Ros Millett</p>
+  <button id="startbtn">Begin</button>
 </div>
 
 <div id="endcard">
@@ -187,7 +85,7 @@ html, body {
     <div class="qr-item">
       <img src="assets/6512bfff3_atw_qr_FINAL.png" alt="Access to Work QR">
       <div class="qr-label">Access to Work</div>
-      <div class="atw">gov.uk/access-to-work · 0800 121 7479</div>
+      <div class="atw">gov.uk/access-to-work &middot; 0800 121 7479</div>
     </div>
     <div class="qr-item">
       <img src="assets/37cf6fd6b_linkedin_qr_ros.png" alt="LinkedIn QR">
@@ -195,13 +93,12 @@ html, body {
       <div class="atw">linkedin.com/in/ros-millett</div>
     </div>
   </div>
-  <div class="es">© Rosalind Millett / DysPhilter™ 2026</div>
+  <div class="es">&copy; Rosalind Millett / DysPhilter&trade; 2026</div>
 </div>
 
 <audio id="audio" preload="auto" src="assets/e4728301d_presentation_audio.mp3"></audio>
 
 <script>
-// ═══ FEATURE ICONS ═══
 var ICONS = {
   comm_mirror: { svg:'<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M60 10 L100 25 L100 60 Q100 90 60 110 Q20 90 20 60 L20 25 Z" fill="#0D5C5C"/><line x1="35" y1="45" x2="85" y2="45" stroke="#c4a96b" stroke-width="3" stroke-linecap="round"/><line x1="35" y1="58" x2="75" y2="58" stroke="#c4a96b" stroke-width="3" stroke-linecap="round" opacity="0.7"/><line x1="35" y1="71" x2="80" y2="71" stroke="#c4a96b" stroke-width="3" stroke-linecap="round" opacity="0.5"/><path d="M60 78 C55 72 48 72 48 78 C48 84 60 92 60 92 C60 92 72 84 72 78 C72 72 65 72 60 78 Z" fill="#c4a96b"/></svg>', label:'The Communication Mirror', desc:'Messages reflected before they reach you' },
   vocal_philter: { svg:'<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="12" fill="#0D5C5C"/><path d="M30 50 Q25 60 30 70" stroke="#0D5C5C" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M20 42 Q12 60 20 78" stroke="#0D5C5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/><path d="M90 50 Q95 60 90 70" stroke="#0D5C5C" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M100 42 Q108 60 100 78" stroke="#0D5C5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/><path d="M45 55 Q42 60 45 65" stroke="#c4a96b" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M75 55 Q78 60 75 65" stroke="#c4a96b" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>', label:'The Vocal Philter', desc:'Your voice, kept and carried' },
@@ -211,11 +108,10 @@ var ICONS = {
   atw: { svg:'<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M40 70 Q40 60 48 58 L72 58 Q80 58 80 66 L80 80 Q80 92 70 96 L50 96 Q40 92 40 82 Z" fill="#0D5C5C" opacity="0.85"/><rect x="56" y="15" width="8" height="45" rx="2" fill="#c4a96b"/><rect x="56" y="48" width="16" height="5" rx="1" fill="#c4a96b"/><rect x="56" y="40" width="12" height="5" rx="1" fill="#c4a96b"/><circle cx="60" cy="18" r="8" fill="none" stroke="#c4a96b" stroke-width="3"/></svg>', label:'Access to Work', desc:'Funding support, made simpler' },
   pattern: { svg:'<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><line x1="30" y1="35" x2="60" y2="60" stroke="#0D5C5C" stroke-width="2" opacity="0.4"/><line x1="60" y1="60" x2="90" y2="40" stroke="#0D5C5C" stroke-width="2" opacity="0.4"/><line x1="60" y1="60" x2="50" y2="90" stroke="#0D5C5C" stroke-width="2" opacity="0.4"/><line x1="60" y1="60" x2="85" y2="85" stroke="#0D5C5C" stroke-width="2" opacity="0.4"/><circle cx="30" cy="35" r="8" fill="#0D5C5C"/><circle cx="90" cy="40" r="8" fill="#0D5C5C"/><circle cx="60" cy="60" r="10" fill="#c4a96b"/><circle cx="50" cy="90" r="8" fill="#0D5C5C"/><circle cx="85" cy="85" r="8" fill="#0D5C5C"/></svg>', label:'Pattern Detection', desc:'Seeing the shape of what keeps happening' },
   voice_enroll: { svg:'<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="40" r="15" fill="#0D5C5C"/><path d="M45 55 Q45 75 60 80 Q75 75 75 55 Z" fill="#0D5C5C"/><path d="M82 35 Q88 45 82 55" stroke="#c4a96b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M90 28 Q100 45 90 62" stroke="#c4a96b" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/><path d="M38 35 Q32 45 38 55" stroke="#c4a96b" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M30 28 Q20 45 30 62" stroke="#c4a96b" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.6"/></svg>', label:'Natural Voice Enrollment', desc:'Your voice, recognised as you' }
-};
+}
 
-// ═══ SCENES ═══
 var SCENES = [
-  { img:"assets/5c910d146_anime_woman.png",label:"Opening", triggers:["not here to tell you a success story","not here to inspire"] },
+  { img:"assets/who_i_am.png",label:"Opening", triggers:["not here to tell you a success story","not here to inspire"] },
   { img:"assets/who_i_am.png", label:"Who I Am", triggers:["My name is Ros","AuDHD","autistic and ADHD"] },
   { img:"assets/send_teacher.png", label:"SEND Teacher" },
   { img:"assets/the_mask.png", label:"The Mask", triggers:["mask so early","strips the mask away","perimenopause"] },
@@ -249,7 +145,9 @@ var SCENES = [
   { img:"assets/enterprise_shield.png", label:"The Shield", triggers:["system failed us","built the shield"] },
   { img:"assets/enterprise_shield.png", label:"Access to Work", icon:"atw", triggers:["Access to Work","government grant","0800 121 7479","QR code"] },
   { img:"assets/unseen_generations.png", label:"Protect Your Peace", triggers:["protect your peace","protect your energy","experience teach wisdom"] }
-];
+]
+
+
 
 // ═══ TRANSCRIPT ═══
 
@@ -571,6 +469,21 @@ buildScenes();
   if (audio) {
     audio.addEventListener('play', goFullscreen, false);
   }
+})();
+
+</script>
+
+<script>
+// Fullscreen on click — hides all browser chrome
+(function(){
+  function goFullscreen(){
+    var el = document.documentElement;
+    var req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+    if (req) req.call(el);
+  }
+  document.addEventListener('click', goFullscreen, false);
+  var audio = document.getElementById('audio');
+  if (audio) audio.addEventListener('play', goFullscreen, false);
 })();
 </script>
 </body>
