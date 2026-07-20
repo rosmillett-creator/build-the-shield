@@ -118,7 +118,7 @@ canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
 </div>
 
 <div id="endcard">
-  <h2>The system failed us.<br>So we built the shield.</h2>
+  <h2>The System Failed Us.<br>So We Built the Shield.</h2>
   <div class="qr-row">
     <div class="qr-box"><img src="assets/6512bfff3_atw_qr_FINAL.png"><span>ACCESS TO WORK<br>gov.uk/access-to-work &middot; 0800 121 7479</span></div>
     <div class="qr-box"><img src="assets/37cf6fd6b_linkedin_qr_ros.png"><span>CONNECT WITH ROS<br>linkedin.com/in/ros-millett</span></div>
@@ -189,7 +189,7 @@ var SCENES = [
   { img:"assets/the_letter.png", label:"The Open Loop", triggers:["welcomed wholeheartedly","no named contact","no timeline","no clear next step","open loop","genuinely destabilizing","gap DysPhilter exists to close"] },
   { img:"assets/fca_patent.png", label:"FCA & Patent", triggers:["FCA","Financial Conduct Authority","Innovation Pathways","filed a patent","send side communication intercept","no other platform"] },
   { img:"assets/divine_download.png", label:"Signs and Synchronicities", triggers:["all been guided","signs and synchronicity","doors opening","did not knock on"] },
-  { img:"assets/tarot_calm.png", label:"Hanging by a Thread", triggers:["hanging on by a thread","blind faith","trust in the process","moved with blind faith"] },
+  { img:"assets/divine.png", label:"Guided", triggers:["hanging on by a thread","blind faith","trust in the process","moved with blind faith","signs and the synchronicity"] },
   { img:"assets/no_storage.png", label:"Nothing Is Stored", triggers:["does not store what it filters","nothing is retained","nothing sits on a server","waiting to be breached","that is the point"] },
   { img:"assets/six_weeks_old.png", label:"Six Weeks Old", triggers:["six to eight weeks old","built in long linear bursts","between crashes","burnout and grief and insomnia","built from lived experience"] },
   { img:"assets/the_middle.png", label:"The Middle", triggers:["polished success story","in the middle of this","consumed by the divine","consumed by the human","let both be"] },
@@ -392,7 +392,7 @@ function startPresentation() {
     // Music fadeout over last 10 seconds
     if(audio.duration && audio.duration > 0){
       var remaining = audio.duration - t;
-      if(remaining < 10){ audio.volume = Math.max(0, (remaining/10) * 0.15); }
+      if(remaining < 10){ if(bgMusic) bgMusic.volume = Math.max(0, (remaining/10) * 0.15); }
     }
     updateCaptions(t);
     var idx = findSceneIndex(t);
@@ -402,7 +402,7 @@ function startPresentation() {
   });
   
   audio.addEventListener('timeupdate', function(){
-    if(audio.duration && (audio.duration - audio.currentTime) < 12 && !endcard.classList.contains('on')){
+    if(audio.currentTime >= 1435 && !endcard.classList.contains('on')){
       endcard.classList.add('on');
       if(document.fullscreenElement) document.exitFullscreen();
     }
