@@ -21,16 +21,7 @@ html,body{height:100%;overflow:hidden;background:#12161f;font-family:'Georgia',s
 #vig{position:absolute;inset:0;z-index:4;pointer-events:none;
   background:radial-gradient(ellipse at center,transparent 80%,rgba(8,11,20,0.18) 100%)}
 
-/* Little Me memory photo — opening scene only — rectangular, not orb */
-.memory-overlay{position:absolute;width:22%;aspect-ratio:3/4;top:18%;left:50%;
-  transform:translateX(-50%);border-radius:12px;
-  background:url('assets/fbf4b5953_1000122463.jpeg');background-size:cover;
-  background-position:center;opacity:0;
-  filter:blur(0.5px) brightness(1.05);
-  box-shadow:0 8px 40px rgba(255,255,255,0.12),inset 0 0 20px rgba(255,255,255,0.08);
-  border:2px solid rgba(255,255,255,0.15);
-  transition:opacity 3s ease;z-index:2;pointer-events:none}
-.memory-overlay.active{opacity:0.65}
+/* Little Me overlay removed — per user request */
 
 #iconLayer{position:absolute;inset:0;z-index:5;pointer-events:none;
   display:flex;align-items:center;justify-content:center;opacity:0;
@@ -259,10 +250,6 @@ function buildScenes() {
     stage.appendChild(d);
     elNodes.push(d);
   }
-  var mem = document.createElement('div');
-  mem.className = 'memory-overlay';
-  mem.id = 'memoryOverlay';
-  elNodes[0].appendChild(mem);
 }
 
 function showScene(idx) {
@@ -275,12 +262,6 @@ function showScene(idx) {
   currentScene = idx;
   sceneLabelEl.textContent = SCENES[idx].label;
   sceneLabelEl.classList.add('on');
-  
-  var memOv = document.getElementById('memoryOverlay');
-  if (memOv) {
-    if (idx === 0) { memOv.classList.add('active'); }
-    else { memOv.classList.remove('active'); }
-  }
   
   
   
