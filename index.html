@@ -355,7 +355,16 @@ function startPresentation() {
   
   audio.play().then(() => {
             const bgMusic = document.getElementById('bgMusic');
-            if (bgMusic) { bgMusic.volume = 0.15; bgMusic.play().catch(()=>{}); }
+            if (bgMusic) { 
+              bgMusic.volume = 0.15; 
+              bgMusic.loop = true;
+              bgMusic.play().catch(()=>{}); 
+              // Explicit loop fallback in case browser drops the attribute
+              bgMusic.addEventListener('ended', function() {
+                bgMusic.currentTime = 0;
+                bgMusic.play().catch(()=>{});
+              });
+            }
         }).catch(function(e) {
     console.log('Audio autoplay prevented:', e);
   });
