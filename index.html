@@ -262,8 +262,7 @@ function buildScenes() {
   var mem = document.createElement('div');
   mem.className = 'memory-overlay';
   mem.id = 'memoryOverlay';
-  elNodes[0].appendChild(mem););
-  /* memory overlay removed */
+  elNodes[0].appendChild(mem);
 }
 
 function showScene(idx) {
@@ -283,7 +282,7 @@ function showScene(idx) {
     else { memOv.classList.remove('active'); }
   }
   
-  /* memory overlay toggle removed */
+  
   
   if (SCENES[idx].icon && ICONS[SCENES[idx].icon]) {
     var icon = ICONS[SCENES[idx].icon];
