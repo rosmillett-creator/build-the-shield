@@ -109,7 +109,10 @@ canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
 <div id="progressLine"></div>
 <div id="transcriptBar"><div id="transcriptText"></div></div>
 
-<audio id="audio" preload="auto"><source src="assets/e4728301d_presentation_audio.mp3" type="audio/mpeg"></audio>
+<audio id="audio" preload="auto">
+<audio id="bgMusic" preload="auto" loop>
+  <source src="assets/ambient_music.mp3" type="audio/mpeg">
+</audio><source src="assets/e4728301d_presentation_audio.mp3" type="audio/mpeg"></audio>
 
 <div id="titlecard">
   <p>A Voice-Driven Visual Story</p>
@@ -350,7 +353,10 @@ function startPresentation() {
   showScene(0);
   dysphilterMark.classList.add('on');
   
-  audio.play().catch(function(e) {
+  audio.play().then(() => {
+            const bgMusic = document.getElementById('bgMusic');
+            if (bgMusic) { bgMusic.volume = 0.15; bgMusic.play().catch(()=>{}); }
+        }).catch(function(e) {
     console.log('Audio autoplay prevented:', e);
   });
   
