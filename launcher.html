@@ -4,23 +4,15 @@
 <meta charset="UTF-8">
 <title>Opening film...</title>
 <style>
-body{margin:0;padding:0;background:#0a0d14;display:flex;align-items:center;justify-content:center;height:100vh;font-family:Georgia,serif;color:#e6e2db;text-align:center}
-a{color:#e8c97a;font-size:20px;text-decoration:none;padding:20px 40px;border:1px solid rgba(232,201,122,0.3);border-radius:8px}
-a:hover{background:rgba(232,201,122,0.1)}
-p{color:#5a6a7a;font-size:14px;margin-top:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0d14;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;font-family:Georgia,serif}
+.btn{display:block;padding:20px 60px;border:2px solid rgba(232,201,122,0.4);border-radius:12px;color:#e6e2db;font-size:22px;text-decoration:none;letter-spacing:2px;transition:all 0.3s}
+.btn:hover{background:rgba(232,201,122,0.1);border-color:rgba(232,201,122,0.7)}
+p{color:#5a6a7a;font-size:14px;margin-top:24px;font-family:Helvetica,sans-serif;letter-spacing:1px;text-align:center}
 </style>
 </head>
 <body>
-<div>
-<p style="color:#5a6a7a;font-size:13px;letter-spacing:2px;margin-bottom:30px">CLICK THE BUTTON TO OPEN THE FILM</p>
-<a href="https://rosmillett-creator.github.io/build-the-shield/" target="_blank" onclick="window.open('https://rosmillett-creator.github.io/build-the-shield/','_blank','width=9999,height=9999,toolbar=no,location=no,menubar=no,status=no');return false;">OPEN FILM</a>
-<p>The film will open in its own window.<br>Nothing else will be visible.</p>
-</div>
-<script>
-// Auto-open on any click
-document.addEventListener('click', function(){
-  window.open('https://rosmillett-creator.github.io/build-the-shield/','_blank','width=9999,height=9999,toolbar=no,location=no,menubar=no,status=no');
-}, false);
-</script>
+<a class="btn" href="https://rosmillett-creator.github.io/build-the-shield/" target="_blank">OPEN FILM ▸</a>
+<p>The film opens in its own window.<br>Click Begin when it loads.</p>
 </body>
 </html>
