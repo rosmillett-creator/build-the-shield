@@ -1,0 +1,8 @@
+file 'assets/who_i_am.png'
+duration 10.500
+file 'assets/who_i_am_field.png'
+duration 10.000
+file 'assets/send_teacher.png'
+duration 10.600
+file 'assets/the_mask.png'
+file 'assets/who_i_am.png'
