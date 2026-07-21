@@ -196,9 +196,10 @@ var SCENES = [
 { img:"assets/patterns_cycles.png", label:"Patterns and Cycles", triggers:["patterns and cycles","logs over time","symptoms spike","week before a crash","treatment plan"] },
 {img:"assets/gp_after.png",label:"GP After DysPhilter",sub:""},
 { img:"assets/health_passport.png", label:"Health Passport", triggers:["health passport","one section inside","moves with you"] },
+{ img:"assets/health_passport.png", label:"Universal Passport", triggers:["universal passport","holds everything","moves with you","every department","every professional","lived experience is evidence","health passport","one section inside"] },
 { img:"assets/accessible_convo.png", label:"Accessible Conversation Panel", triggers:["accessible conversation panel","brain dump","summarise it","shared with the professional","cannot say they didn't know","accountable"] },
-{ img:"assets/recording_night.png", label:"The Vocal Philter", triggers:["record when you can","11 at night","thoughts are flowing","three days before the appointment","brain is working","building","creating","working through the night"] },
-{ img:"assets/voice_going_further.png", label:"Going Further", icon:"vocal_philter", triggers:["degenerative condition","voice may not last","record now","I love you","voice is not just sound","losing it should not mean disappearing"] },
+{ img:"assets/vocal_philter.png", label:"The Vocal Philter", icon:"vocal_philter", triggers:["Vocal Philter","your voice, kept and carried","words in your head","no way to get them out","body or your nervous system","energy won't let you"] },
+{ img:"assets/recording_night.png", label:"Recording When You Can", triggers:["record when you can","11 at night","thoughts are flowing","three days before the appointment","brain is working","building","creating","working through the night"] },
 { img:"assets/voice_i_love_you.png", label:"I Love You", triggers:["family needs to hear","I love you","not a clone","not generated","actual voice preserved","losing it should not mean disappearing"] },
 { img:"assets/enterprise_before_after.png", label:"The Enterprise Edition", triggers:["Enterprise Edition","not a diversity and inclusion tool","accountability in three directions","organization is accountable"] },
 { img:"assets/enterprise_building.png", label:"Enterprise Examples", triggers:["bank that cannot send","hostile message","vulnerable customer","staff are accountable","scoffs at this","needs it in six months","what does this look like"] },
@@ -222,7 +223,7 @@ var SCENES = [
 { img:"assets/protect_peace.png", label:"Protect Your Peace", triggers:["protect your peace"] }
 ];
 
-var SCENE_TIMES = [0.0, 10.5, 20.5, 31.1, 44.6, 52.6, 71.4, 75.3, 95.5, 115.3, 131.8, 138.0, 150.3, 162.4, 187.4, 202.3, 246.4, 301.8, 325.3, 336.8, 350.0, 403.0, 411.0, 435.4, 453.0, 468.0, 527.9, 546.0, 550.0, 578.6, 599.0, 625.3, 647.0, 662.4, 690.2, 709.4, 742.2, 772.7, 803.8, 843.0, 867.2, 870.6, 901.2, 933.3, 989.4, 1016.9, 1033.8, 1058.3, 1086.8, 1112.1, 1137.5, 1150.4, 1166.6, 1192.4, 1217.0, 1240.5, 1262.8, 1278.8, 1313.9, 1325.0, 1332.0, 1340.5, 1381.8, 1394.9, 1399.4, 1428.5];
+var SCENE_TIMES = [0.0, 10.5, 20.5, 31.1, 44.6, 52.6, 71.4, 75.3, 95.5, 115.3, 131.8, 138.0, 150.3, 162.4, 187.4, 202.3, 246.4, 301.8, 325.3, 336.8, 350.0, 403.0, 411.0, 435.4, 453.0, 468.0, 527.9, 546.0, 550.0, 578.6, 599.0, 625.3, 647.0, 662.4, 690.2, 709.4, 742.2, 772.7, 803.8, 843.0, 867.2, 901.2, 933.3, 953.0, 989.4, 1016.9, 1033.8, 1058.3, 1086.8, 1112.1, 1137.5, 1150.4, 1166.6, 1192.4, 1217.0, 1240.5, 1262.8, 1278.8, 1313.9, 1325.0, 1332.0, 1340.5, 1381.8, 1394.9, 1399.4, 1428.5];
 var AUDIO_DURATION = 1454.0;
 
 // Preload first 5 scenes immediately, rest load progressively in background
