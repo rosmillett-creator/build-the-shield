@@ -101,7 +101,7 @@ html,body{height:100%;overflow:hidden;background:#12161f;font-family:'Georgia',s
 
 .qr-row{display:flex;gap:40px;justify-content:center;align-items:flex-start;margin-top:10px}
 .qr-row .qr-box{display:flex;flex-direction:column;align-items:center;gap:8px}
-.qr-row .qr-box img{width:140px;height:140px;border-radius:8px;
+.qr-row .qr-box img{width:180px;height:180px;border-radius:8px;
   border:2px solid rgba(196,169,107,0.4);padding:5px;background:#fff}
 .qr-row .qr-box span{color:rgba(255,255,255,0.6);font-size:0.75rem;
   letter-spacing:1px;font-family:'Helvetica Neue',sans-serif;text-align:center;line-height:1.4}
@@ -178,9 +178,7 @@ var SCENES = [
 { img:"assets/gp_split.png", label:"GP & Therapist", triggers:["should be resting","give your brain a break","my GP and my therapist","keep being told this by my GP","GP and my therapist"] },
 { img:"assets/dwp_questions.png", label:"DWP: Are You Ready to Work?", triggers:["instead of support","the DWP are causing","dwp are causing","causing me more stress"] },
 { img:"assets/bereavement_ros_stepdad.png", label:"When Someone Dies", triggers:["my mum died","when someone dies","systems do not stop","things I've seen my stepfather go through"] },
-{ img:"assets/stepdad_paperwork.png", label:"The Admin of Death", triggers:["death certificate","probate","frozen accounts","pension","HMRC","utility companies","car tax","everything registered to my mum","while my stepfather is processing","losing his wife"] },,
-
-
+{ img:"assets/stepdad_paperwork.png", label:"The Admin of Death", triggers:["death certificate","probate","frozen accounts","pension","HMRC","utility companies","car tax","everything registered to my mum","while my stepfather is processing","losing his wife"] },
 { img:"assets/thirty_doors.png", label:"30 Closed Doors", triggers:["30 closed","facing 30","one open","one notification","certificate is referenced"] },
 { img:"assets/tia_car.png", label:"Couldnt Speak", triggers:["couldnt speak","speak at all","time I couldnt"] },
 { img:"assets/tia_hospital.png", label:"Trapped", triggers:["suspected TIA","mini stroke","trapped inside","inside my own body","own body"] },
@@ -189,39 +187,38 @@ var SCENES = [
 { img:"assets/vocal_philter_tap.png", label:"One Tap", triggers:["one tap","your real voice speaks","even if your hand can barely move","no sign language","not a robot","not AI","your voice the way you actually sound"] },
 { img:"assets/two_editions.png", label:"Two Editions", triggers:["two editions","personal edition","enterprise edition","for the personal edition","for organisations"] },
 { img:"assets/hurt_message.png", label:"The Hurt", triggers:["received a message","cruel","manipulative","designed to unsettle","rethink about"] },
-{ img:"assets/comm_mirror.png", label:"The Communication Mirror", icon:"comm_mirror", triggers:["Communication Mirror","send side","before a message reaches","scans it","hostility","manipulation","gaslighting","abuse"] },
+{ img:"assets/comm_mirror.png", label:"The Communication Mirror", triggers:["Communication Mirror","send side","before a message reaches","scans it","hostility","manipulation","gaslighting","abuse"] },
 { img:"assets/truth_vault.png", label:"The Truth Vault", triggers:["truth vault","time-stamped","tamper-evident","court admissible","never have to read it"] },
 { img:"assets/three_stages.png", label:"Three Stages", triggers:["three stages","stable place","trusted person","healing journey","locked permanently","no override"] },
 { img:"assets/mandatory_pause.png", label:"The Mandatory Pause", triggers:["people in distress","reread harmful content","obsessively","mandatory pause","future self","protecting your present self"] },
-{img:"assets/gp_before.png",label:"GP Before DysPhilter",sub:""},
+{ img:"assets/gp_before.png", label:"GP Before DysPhilter", triggers:[] },
 { img:"assets/health_passport_detail.png", label:"Logging Symptoms", triggers:["microphone","listens with your consent","log","speak your symptoms","summary is already there"] },
 { img:"assets/patterns_graph.png", label:"Patterns and Cycles", triggers:["patterns and cycles","logs over time","symptoms spike","week before a crash","treatment plan"] },
-{img:"assets/gp_after.png",label:"GP After DysPhilter",sub:""},
-{ img:"assets/health_passport.png", label:"Health Passport", triggers:["health passport","one section inside","moves with you"] },
-{ img:"assets/health_passport.png", label:"Universal Passport", triggers:["universal passport","holds everything","moves with you","every department","every professional","lived experience is evidence","health passport","one section inside"] },
-{ img:"assets/accessible_convo.png", label:"Accessible Conversation Panel", triggers:["accessible conversation panel","brain dump","summarise it","shared with the professional","cannot say they didn't know","accountable"] },
-{ img:"assets/vocal_philter.png", label:"The Vocal Philter", icon:"vocal_philter", triggers:["Vocal Philter","your voice, kept and carried","words in your head","no way to get them out","body or your nervous system","energy won't let you"] },
+{ img:"assets/gp_after.png", label:"GP After DysPhilter", triggers:[] },
+{ img:"assets/accessible_convo.png", label:"Accessible Conversation Panel", triggers:["accessible conversation panel","brain dump","summarise it","shared with the professional","cannot say they didn't know","accountable","type it","speak it"] },
+{ img:"assets/vocal_philter.png", label:"The Vocal Philter", triggers:["Vocal Philter","your voice kept and carried","words in your head","no way to get them out","body or your nervous system","energy won't let you"] },
 { img:"assets/recording_night_mic.png", label:"Recording When You Can", triggers:["record when you can","11 at night","thoughts are flowing","three days before the appointment","brain is working","building","creating","working through the night"] },
-{ img:"assets/voice_i_love_you.png", label:"I Love You", triggers:["family needs to hear","I love you","not a clone","not generated","actual voice preserved","losing it should not mean disappearing"] },
-{ img:"assets/enterprise_before_after.png", label:"The Enterprise Edition", triggers:["Enterprise Edition","not a diversity and inclusion tool","accountability in three directions","organization is accountable"] },
-{ img:"assets/enterprise_building.png", label:"Enterprise Examples", triggers:["bank that cannot send","hostile message","vulnerable customer","staff are accountable","scoffs at this","needs it in six months","what does this look like"] },
-{ img:"assets/not_just_diagnoses.png", label:"Not Just For Diagnoses", triggers:["not only for people","anyone whose life changes","hormonal shift"] },
-{ img:"assets/govt_letters.png", label:"Scotland Office", triggers:["Scotland Office","UK Government","formal letter back","innovative approach","accessible communication"] },
-{ img:"assets/financial_inclusion.png", label:"Financial Inclusion", triggers:["financial inclusion","HM Treasury","financial inclusion strategy","financial inclusion infrastructure"] },
-{ img:"assets/financial_exclusion.png", label:"Financial Exclusion", triggers:["financially excluded","cannot communicate with your bank","systems that manage the money","not built for the way your brain works"] },
-{ img:"assets/the_letter.png", label:"The Open Loop", triggers:["welcomed wholeheartedly","no named contact","no timeline","no clear next step","open loop","genuinely destabilizing","gap DysPhilter exists to close"] },
-{ img:"assets/fca_patent.png", label:"FCA & Patent", triggers:["FCA","Financial Conduct Authority","Innovation Pathways","filed a patent","send side communication intercept","no other platform"] },
-{ img:"assets/divine.png", label:"Guided", triggers:["all been guided","signs and synchronicity","doors opening","did not knock on","hanging on by a thread","blind faith","trust in the process"] },
-{ img:"assets/no_storage.png", label:"Nothing Is Stored", triggers:["does not store what it filters","nothing is retained","nothing sits on a server","does not keep your voice","does not keep your data"] },
-{ img:"assets/six_weeks_old.png", label:"Six Weeks Old", triggers:["six weeks old","4am feed","couldn't switch off","brain wouldn't quiet"] },
-{ img:"assets/the_middle.png", label:"The Middle", triggers:["the middle","liminal space","between what was and what will be"] },
-{ img:"assets/people_struggling.png", label:"People Struggling", triggers:["speaking for those","struggling on a daily basis","depths of despair","lost hope and faith","don't feel seen or heard","darkest of places"] },{img:"assets/people_struggling_after.png",label:"People With DysPhilter"},
-{img:"assets/mentoring_cyp.png",label:"Mentoring CYP",caption:""},
-{ img:"assets/experience_teach_wisdom.png", label:"Darkest Places", triggers:["next generation","young women","don't yet know they're neurodivergent","masking their way through","without something there to catch"] },
-{img:"assets/next_generation.png",label:"For the Next Generation",caption:""},
-{ img:"assets/the_shield.png", label:"The Shield", triggers:["system failed us","built the shield","building the thing my mum"] },
-{ img:"assets/atw_info.png", label:"Access to Work", triggers:["Access to Work","government grant","do not have to pay it back","does not affect","self employed","100% funding"] },
-
+{ img:"assets/voice_going_further.png", label:"Voice Preservation", triggers:["goes further","degenerative condition","stroke","voice may not last","record now while they still can","voice stays","appointments","phone calls"] },
+{ img:"assets/voice_i_love_you.png", label:"I Love You", triggers:["I love you","not a clone","not generated","actual voice preserved","voice is not just sound","losing it should not mean disappearing"] },
+{ img:"assets/enterprise_before_after.png", label:"The Enterprise Edition", triggers:["Enterprise Edition","not a diversity and inclusion tool","holds accountability","three directions","organization is accountable"] },
+{ img:"assets/enterprise_building.png", label:"Enterprise Examples", triggers:["bank that cannot send","hostile message","vulnerable customer","communication mirror catches","employer whose staff","accountable for how they speak"] },
+{ img:"assets/not_just_diagnoses.png", label:"Not Just For Diagnoses", triggers:["not only for people with a diagnosis","anyone whose life changes","accident","illness","bereavement","hormonal shift","strips away the coping mechanisms"] },
+{ img:"assets/govt_letters.png", label:"Scotland Office", triggers:["Scotland Office","UK Government","Scotland has been ahead","neurodivergent people","formal letter back","they said it's"] },
+{ img:"assets/financial_inclusion.png", label:"Financial Inclusion", triggers:["Treasury","financial inclusion strategy","not just a communication tool","financial inclusion infrastructure"] },
+{ img:"assets/financial_exclusion.png", label:"Financial Exclusion", triggers:["cannot communicate with your bank","benefits officer","employer","financially excluded","systems that manage the money","were not built"] },
+{ img:"assets/the_letter.png", label:"The Open Loop", triggers:["formal acknowledgement","step forward","no named contact","no timeline","no clear next step","open loop","neurodivergent person","genuinely destabilising"] },
+{ img:"assets/fca_patent.png", label:"FCA & Patent", triggers:["submitted DysPhilter to the FCA","Financial Conduct Authority","Innovation Pathways Programme","filed a patent","send side communication intercept"] },
+{ img:"assets/divine.png", label:"Guided", triggers:["believe that this has all been guided","signs and the synchronicity","doors opening","did not knock on","hanging on by a thread"] },
+{ img:"assets/no_storage.png", label:"Nothing Is Stored", triggers:["does not store what it filters","nothing is retained","institutions","banks","NHS trusts","employers","they store their own data"] },
+{ img:"assets/six_weeks_old.png", label:"Six Weeks Old", triggers:["eight weeks old","built platform","long linear bursts","hyper focus","crashes and burnout","grief and insomnia","built from lived experience"] },
+{ img:"assets/the_shield.png", label:"The Shield", triggers:["success story","I am in the middle of this","consumed by the downloads","inspiration in spirit","building without a thought","I am building the shield"] },
+{ img:"assets/people_struggling.png", label:"People Struggling", triggers:["speaking for those","struggling on a daily basis","depths of despair","lost hope and faith","don't feel seen or heard"] },
+{ img:"assets/protect_peace.png", label:"Protect Your Peace", triggers:["I've been there","I've lived it","still working through it","capacity to experience"] },
+{ img:"assets/experience_teach_wisdom.png", label:"Teach Wisdom", triggers:["teach wisdom","outstanding learning mentors","told me","he was true and right","the people who have"] },
+{ img:"assets/mentoring_cyp.png", label:"Darkest Places", triggers:["darkest of places","best support others","not because they have it together","they know what it is","to not have it together"] },
+{ img:"assets/next_generation.png", label:"For the Next Generation", triggers:["next generation","young women","don't yet know they're neurodivergent","masking their way","systems that were never built for them"] },
+{ img:"assets/the_shield.png", label:"Build The Shield", triggers:["system failed us","so we built the shield","before I close"] },
+{ img:"assets/atw_info.png", label:"Access to Work", triggers:["something practical","funded through access to work","UK government grant","do not have to pay it back","doesn't affect your other benefits","self employed","100% funding"] },
 { img:"assets/protect_peace.png", label:"Protect Your Peace", triggers:["protect your peace"] }
 ];
 
@@ -431,15 +428,15 @@ function startPresentation() {
     });
 
     audio.addEventListener('timeupdate', function() {
-      if (audio.currentTime >= 1435 && !endcard.classList.contains('on')) {
+      if (audio.currentTime >= 1418 && !endcard.classList.contains('on')) {
         endcard.classList.add('on');
         if (document.fullscreenElement) document.exitFullscreen();
       }
     });
 
     audio.addEventListener('ended', function() {
-      var holdSeconds = 7;
-      var fadeSeconds = 5;
+      var holdSeconds = 2;
+      var fadeSeconds = 3;
       setTimeout(function() {
         if (bgMusic) {
           var vol = bgMusic.volume;
