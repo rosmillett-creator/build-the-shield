@@ -99,6 +99,14 @@ html,body{height:100%;overflow:hidden;background:#12161f;font-family:'Georgia',s
 #copyright{position:absolute;bottom:20px;color:rgba(255,255,255,0.3);
   font-size:0.7rem;letter-spacing:2px;font-family:'Helvetica Neue',sans-serif}
 
+.qr-row{display:flex;gap:40px;justify-content:center;align-items:flex-start;margin-top:10px}
+.qr-row .qr-box{display:flex;flex-direction:column;align-items:center;gap:8px}
+.qr-row .qr-box img{width:140px;height:140px;border-radius:8px;
+  border:2px solid rgba(196,169,107,0.4);padding:5px;background:#fff}
+.qr-row .qr-box span{color:rgba(255,255,255,0.6);font-size:0.75rem;
+  letter-spacing:1px;font-family:'Helvetica Neue',sans-serif;text-align:center;line-height:1.4}
+
+
 canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
 </style>
@@ -212,7 +220,7 @@ var SCENES = [
 { img:"assets/protect_peace.png", label:"Protect Your Peace", triggers:["protect your peace"] }
 ];
 
-var SCENE_TIMES = [0.0, 10.5, 20.5, 31.1, 44.6, 52.6, 71.4, 75.3, 95.5, 115.3, 131.8, 138.0, 150.3, 162.4, 187.4, 202.3, 246.4, 301.8, 325.3, 336.8, 403.0, 411.0, 435.4, 453.0, 468.0, 489.0, 519.9, 527.9, 546.0, 550.0, 578.6, 599.0, 625.3, 662.4, 690.2, 709.4, 742.2, 772.7, 803.8, 843.0, 867.2, 870.6, 901.2, 933.3, 989.4, 1016.9, 1033.8, 1058.3, 1086.8, 1112.1, 1137.5, 1150.4, 1166.6, 1192.4, 1217.0, 1240.5, 1262.8, 1278.8, 1313.9, 1325.0, 1332.0, 1340.5, 1381.8, 1394.9, 1399.4, 1428.5, 1433.0];
+var SCENE_TIMES = [0.0, 10.5, 20.5, 31.1, 44.6, 52.6, 71.4, 75.3, 95.5, 115.3, 131.8, 138.0, 150.3, 162.4, 187.4, 202.3, 246.4, 301.8, 325.3, 336.8, 403.0, 411.0, 435.4, 453.0, 468.0, 489.0, 519.9, 527.9, 546.0, 550.0, 578.6, 599.0, 625.3, 662.4, 690.2, 709.4, 742.2, 772.7, 803.8, 843.0, 867.2, 870.6, 901.2, 933.3, 989.4, 1016.9, 1033.8, 1058.3, 1086.8, 1112.1, 1137.5, 1150.4, 1166.6, 1192.4, 1217.0, 1240.5, 1262.8, 1278.8, 1313.9, 1325.0, 1332.0, 1340.5, 1381.8, 1394.9, 1399.4, 1428.5, 1440.5];
 var AUDIO_DURATION = 1454.0;
 
 // Preload first 5 scenes immediately, rest load progressively in background
