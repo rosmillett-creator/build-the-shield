@@ -18,7 +18,6 @@ html,body{height:100%;overflow:hidden;background:#12161f;font-family:'Georgia',s
   background-size:100% 100%;background-position:center center;background-repeat:no-repeat;background-color:#0a0a0f;
   filter:brightness(1.15) saturate(1.05)}
 .scene-img.active{opacity:1;animation:kb 20s ease-out forwards}
-.scene-img.instant{transition:none;opacity:1}
 @keyframes kb{from{transform:scale(1.0)}to{transform:scale(1.06)}}
 
 #vig{position:absolute;inset:0;z-index:4;pointer-events:none;
@@ -283,7 +282,7 @@ function showScene(idx) {
   var el = elNodes[idx];
   void el.offsetWidth;
   el.classList.add('active');
-  if (idx === 0) { el.classList.add('instant'); }
+
   currentScene = idx;
   sceneLabelEl.textContent = SCENES[idx].label;
   sceneLabelEl.classList.add('on');
