@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DysPhilter™ — Product Showcase</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:#0d1526;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+
+.layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 2s ease-in-out}
+.layer.show{opacity:1}
+
+/* Brand / shield scene */
+.brand-center{display:flex;flex-direction:column;align-items:center}
+.shield-box{position:relative;width:240px}
+.shield-box svg{width:100%;height:auto;display:block}
+.chain-in{
+  position:absolute;
+  top:46%; left:50%;
+  transform:translate(-50%,-50%);
+  width:176px; height:92px;
+}
+.brand-text{text-align:center;margin-top:1.2rem}
+.brand-name{font-family:Georgia,serif;font-size:1.6rem;color:#f5ead0;letter-spacing:0.12em;font-weight:400}
+.brand-tag{font-family:Georgia,serif;font-size:0.72rem;color:#8a9a7a;letter-spacing:0.32em;text-transform:uppercase;margin-top:0.5rem}
+
+/* Mockup card */
+.mockup{background:#162238;border:1px solid #2a3a55;border-radius:14px;padding:2.2rem 2.5rem;width:440px;max-width:88vw;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.mockup-title{font-family:Georgia,serif;font-size:1.35rem;color:#f5ead0;margin-bottom:0.25rem;font-weight:400}
+.mockup-sub{font-size:0.7rem;color:#8a9a7a;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:1.6rem}
+.divider{height:1px;background:#2a3a55;margin:1.1rem 0}
+.row{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.8rem}
+.row:last-child{margin-bottom:0}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.warm{background:#c47a5a}
+.cream{background:#f5ead0}
+.sage{background:#8a9a7a}
+.label{color:#f5ead0;font-size:0.93rem;line-height:1.5}
+.sub{color:#c4b896;font-size:0.8rem;line-height:1.5;margin-top:1px}
+.badges{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.5rem}
+.badge{padding:0.28rem 0.75rem;border:1px solid #2a3a55;border-radius:20px;font-size:0.67rem;color:#c4b896;letter-spacing:0.08em}
+.btn-row{display:flex;gap:0.7rem;margin-top:1.1rem;flex-wrap:wrap}
+.btn{padding:0.6rem 1.2rem;border-radius:8px;font-size:0.82rem}
+.btn-pri{background:#8a9a7a;color:#0d1526}
+.btn-sec{background:transparent;color:#c4b896;border:1px solid #2a3a55}
+.center-note{text-align:center;color:#c4b896;font-size:0.82rem;line-height:1.6}
+
+/* Controls */
+#controls{position:fixed;bottom:18px;right:20px;display:flex;gap:8px;z-index:100}
+.ctl{background:rgba(13,21,38,0.9);border:1px solid #2a3a55;color:#c4b896;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px}
+#count{position:fixed;bottom:22px;left:22px;color:#8a9a7a;font-size:0.65rem;letter-spacing:0.2em;z-index:100}
+</style>
+</head>
+<body>
+<div class="layer" id="L1"></div>
+<div class="layer" id="L2"></div>
+<div id="count">1 / 7</div>
+<div id="controls">
+<div class="ctl" id="prev">&#9664;</div>
+<div class="ctl" id="play">&#9208;</div>
+<div class="ctl" id="next">&#9654;</div>
+</div>
+
+<script>
+var ICON = "https://base44.app/api/apps/6a086bdf9518d928b61eb935/files/mp/public/6a086bdf9518d928b61eb935/c6a631fb5_dysphilter_icon_clean.png";
+
+var SHIELD =
+  '<div class="shield-box">'
+  +'<svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+  +'<path d="M120 8 L228 32 V110 C228 168 178 200 120 218 C62 200 12 168 12 110 V32 Z" '
+  +'stroke="#f5ead0" stroke-width="2" fill="rgba(245,234,208,0.04)" stroke-linejoin="round"/>'
+  +'</svg>'
+  +'<img class="chain-in" src="'+ICON+'">'
+  +'</div>';
+
+function brand(tag){
+  return '<div class="brand-center">'+SHIELD
+    +'<div class="brand-text">'
+    +'<div class="brand-name">DysPhilter&#8482;</div>'
+    +(tag?'<div class="brand-tag">'+tag+'</div>':'')
+    +'</div></div>';
+}
+
+var scenes = [
+
+{d:7000, html: brand('The Shield')},
+
+{d:13000, html:
+'<div class="mockup">'
++'<div class="mockup-title">Communication Mirror</div>'
++'<div class="mockup-sub">Send-side intercept</div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot warm"></div><div><div class="label">Harmful content detected</div></div></div>'
++'<div class="row"><div class="dot warm"></div><div><div class="label">Message held before delivery</div></div></div>'
++'<div class="row"><div class="dot warm"></div><div><div class="label">Sender notified — not the recipient</div></div></div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Reflected back to sender</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Recipient never exposed</div></div></div>'
++'<div class="divider"></div>'
++'<div class="btn-row"><div class="btn btn-pri">Send a kinder version</div><div class="btn btn-sec">Hold for now</div></div>'
++'</div>'},
+
+{d:13000, html:
+'<div class="mockup">'
++'<div class="mockup-title">Truth Vault&#8482;</div>'
++'<div class="mockup-sub">Sealed evidence — yours to keep</div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Entry · Today 14:32</div><div class="sub">Sealed and timestamped</div></div></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Entry · Yesterday 09:15</div><div class="sub">Sealed and timestamped</div></div></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Entry · 12 July 21:07</div><div class="sub">Sealed and timestamped</div></div></div>'
++'<div class="divider"></div>'
++'<div class="badges"><div class="badge">Tamper-evident</div><div class="badge">Court-admissible</div><div class="badge">You never have to re-read it</div></div>'
++'</div>'},
+
+{d:12000, html:
+'<div class="mockup">'
++'<div class="mockup-title">Universal Passport</div>'
++'<div class="mockup-sub">Everything they need to know about you</div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Your knowledge</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Your words</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Your patterns</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Your evidence</div></div></div>'
++'<div class="divider"></div>'
++'<div class="center-note">Carried wherever you go · Whoever you meet<br>Owned by you · Given by you</div>'
++'</div>'},
+
+{d:13000, html:
+'<div class="mockup">'
++'<div class="mockup-title">Enterprise Edition</div>'
++'<div class="mockup-sub">Accountability in all directions</div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Organisation to clients</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Organisation to staff</div></div></div>'
++'<div class="row"><div class="dot sage"></div><div><div class="label">Staff to each other</div></div></div>'
++'<div class="divider"></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Live audit</div><div class="sub">What is being done · What is needed</div></div></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Sealed records</div><div class="sub">Cannot be altered or deleted</div></div></div>'
++'<div class="row"><div class="dot cream"></div><div><div class="label">Frontline training</div><div class="sub">"I\'m not trained for that" is never the answer</div></div></div>'
++'</div>'},
+
+{d:8000, html: '<div class="brand-center">'+SHIELD+'</div>'},
+
+{d:8000, html: brand('The shield between you and harm')}
+
+];
+
+var idx=0,playing=true,timer=null,act=1;
+function show(i){
+  idx=i;var n=act===1?2:1;
+  document.getElementById('L'+n).innerHTML=scenes[i].html;
+  document.getElementById('L'+n).classList.add('show');
+  document.getElementById('L'+act).classList.remove('show');
+  act=n;
+  document.getElementById('count').textContent=(i+1)+' / '+scenes.length;
+  clearTimeout(timer);
+  if(playing&&i<scenes.length-1)timer=setTimeout(function(){show(i+1)},scenes[i].d);
+  else if(i===scenes.length-1&&playing){playing=false;document.getElementById('play').innerHTML='&#9654;'}
+}
+document.getElementById('play').onclick=function(){playing=!playing;document.getElementById('play').innerHTML=playing?'&#9208;':'&#9654;';clearTimeout(timer);if(playing&&idx<scenes.length-1)timer=setTimeout(function(){show(idx+1)},scenes[idx].d)};
+document.getElementById('next').onclick=function(){clearTimeout(timer);if(idx<scenes.length-1)show(idx+1)};
+document.getElementById('prev').onclick=function(){clearTimeout(timer);if(idx>0)show(idx-1)};
+document.addEventListener('keydown',function(e){if(e.key===' '){e.preventDefault();document.getElementById('play').click()}if(e.key==='ArrowRight')document.getElementById('next').click();if(e.key==='ArrowLeft')document.getElementById('prev').click()});
+show(0);
+</script>
+</body>
+</html>
