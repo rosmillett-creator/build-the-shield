@@ -6,9 +6,9 @@
 <title>DysPhilter™ — Product Showcase</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow:hidden;background:#0d1526;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+html,body{height:100%;overflow:hidden;background:#0d1526;min-height:100vh;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
 
-.layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 2s ease-in-out}
+.layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 2s ease-in-out;background:#0d1526;}
 .layer.show{opacity:1}
 
 /* Brand / shield scene */
@@ -67,7 +67,7 @@ var ICON = "https://base44.app/api/apps/6a086bdf9518d928b61eb935/files/mp/public
 
 var SHIELD =
   '<div class="shield-box">'
-  +'<svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">'
+  +'<svg viewBox="0 0 240 230" fill="none" xmlns="http://www.w3.org/2000/svg">'
   +'<path d="M120 8 L228 32 V110 C228 168 178 200 120 218 C62 200 12 168 12 110 V32 Z" '
   +'stroke="#f5ead0" stroke-width="2" fill="rgba(245,234,208,0.04)" stroke-linejoin="round"/>'
   +'</svg>'
