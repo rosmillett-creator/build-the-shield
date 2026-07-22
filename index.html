@@ -431,7 +431,7 @@ function startPresentation() {
     });
 
     audio.addEventListener('timeupdate', function() {
-      if (audio.currentTime >= 1418 && !endcard.classList.contains('on')) {
+      if (audio.currentTime >= 1428 && !endcard.classList.contains('on')) {
         endcard.classList.add('on');
         if (document.fullscreenElement) document.exitFullscreen();
       }
