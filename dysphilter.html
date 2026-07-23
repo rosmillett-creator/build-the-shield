@@ -384,6 +384,16 @@ details[open] summary::after { content: '−'; }
 </div>
 
 
+
+<!-- ── Free Trial Banner ── -->
+<div style="background:#2a3555;padding:1.5rem 1.5rem;text-align:center;border-top:1px solid #3a4a5a">
+  <div style="max-width:500px;margin:0 auto">
+    <h4 style="color:#f5ead0;font-size:1rem;font-weight:600;margin-bottom:0.4rem">Try everything free for 14 days</h4>
+    <p style="color:#8a9a7a;font-size:0.82rem;line-height:1.5;margin-bottom:1rem">Full access. All features. All your devices. No card needed to start. After 14 days, pick the plan that fits &mdash; or do not, and owe nothing.</p>
+    <a href="#" onclick="alert('Free trial sign-up opens at launch. Enter your email below and we will let you know first.');return false" style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.7rem 2rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.03em">Start free trial</a>
+  </div>
+</div>
+
 <!-- ── Works Alongside ── -->
 <div class="section" style="background:#1a2540;padding:2rem 1.5rem;text-align:center;border-top:1px solid #2a3555">
   <div class="section-title" style="color:#f5ead0;font-size:1.1rem">Works Alongside What You Already Use</div>
@@ -444,6 +454,53 @@ details[open] summary::after { content: '−'; }
     </details>
 
   </div>
+</div>
+
+
+<!-- ── Request an AtW Quote ── -->
+<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem;border-top:1px solid #2a3555">
+  <div class="section-title" style="color:#f5ead0;text-align:center">Get an Access to Work Quote</div>
+  <div class="section-sub" style="color:#8a9a7a;text-align:center;margin-bottom:0.5rem">Self-employed? Employed? Not sure if you qualify?</div>
+  <div style="text-align:center;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">
+    <p style="color:#6a7a8a;font-size:0.82rem;line-height:1.5">Tell us a bit about your situation. We will send you a formal quote you can use for your Access to Work application. The government pays &mdash; not you.</p>
+  </div>
+  <form id="atw-quote-form" style="max-width:500px;margin:0 auto">
+    <div style="margin-bottom:0.8rem">
+      <input type="text" id="atw-name" placeholder="Your name" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <input type="email" id="atw-email" placeholder="Your email" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <input type="text" id="atw-phone" placeholder="Phone (optional)" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <select id="atw-employment" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box">
+        <option value="" style="color:#000">Are you employed or self-employed?</option>
+        <option value="Employed" style="color:#000">Employed</option>
+        <option value="Self-employed" style="color:#000">Self-employed</option>
+        <option value="Both" style="color:#000">Both</option>
+        <option value="Not sure" style="color:#000">Not sure</option>
+      </select>
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <input type="text" id="atw-role" placeholder="Your job role" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <input type="text" id="atw-workplace" placeholder="Workplace name (optional)" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
+    </div>
+    <div style="margin-bottom:0.8rem">
+      <textarea id="atw-challenges" placeholder="What do you find hard at work? (optional)" rows="3" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box;resize:vertical"></textarea>
+    </div>
+    <div style="margin-bottom:1rem">
+      <select id="atw-contact" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box">
+        <option value="Email" style="color:#000">Contact me by email</option>
+        <option value="Phone" style="color:#000">Contact me by phone</option>
+      </select>
+    </div>
+    <button type="submit" id="atw-submit" style="width:100%;padding:0.8rem 1.5rem;background:#8a9a7a;color:#1a2540;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.03em">Request my quote</button>
+    <p id="atw-msg" style="color:#8a9a7a;font-size:0.78rem;margin-top:0.6rem;min-height:1rem;text-align:center"></p>
+  </form>
 </div>
 
 <!-- ── QR ── -->
@@ -518,6 +575,61 @@ document.getElementById('signup-form').addEventListener('submit', async function
     msg.style.color = '#c4a0a0';
     msg.textContent = 'Something went wrong. Please try again.';
     btn.textContent = 'Sign up for updates';
+    btn.disabled = false;
+  }
+});
+</script>
+
+
+<script>
+document.getElementById('atw-quote-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var name = document.getElementById('atw-name').value;
+  var email = document.getElementById('atw-email').value;
+  var phone = document.getElementById('atw-phone').value;
+  var employment = document.getElementById('atw-employment').value;
+  var role = document.getElementById('atw-role').value;
+  var workplace = document.getElementById('atw-workplace').value;
+  var challenges = document.getElementById('atw-challenges').value;
+  var contact = document.getElementById('atw-contact').value;
+  var msg = document.getElementById('atw-msg');
+  var btn = document.getElementById('atw-submit');
+  
+  if (!name || !email) { msg.textContent = 'Please add your name and email.'; return; }
+  
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  msg.textContent = '';
+  msg.style.color = '#8a9a7a';
+  
+  try {
+    var response = await fetch('https://spirit-b61eb935.base44.app/functions/atwQuoteRequest', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        full_name: name, email: email, phone: phone,
+        employment_status: employment, job_role: role,
+        workplace_name: workplace, communication_challenges: challenges,
+        preferred_contact: contact
+      })
+    });
+    var data = await response.json();
+    
+    if (response.ok) {
+      msg.style.color = '#8a9a7a';
+      msg.innerHTML = 'Done. Your quote reference is <strong>' + data.quote_reference + '</strong>. We will be in touch within 2 working days.';
+      document.getElementById('atw-quote-form').reset();
+      btn.textContent = 'Quote requested';
+    } else {
+      msg.style.color = '#c4a0a0';
+      msg.textContent = data.error || 'Something went wrong. Please try again.';
+      btn.textContent = 'Request my quote';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    msg.style.color = '#c4a0a0';
+    msg.textContent = 'Something went wrong. Please try again.';
+    btn.textContent = 'Request my quote';
     btn.disabled = false;
   }
 });
