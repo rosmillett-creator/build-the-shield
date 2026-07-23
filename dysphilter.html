@@ -70,6 +70,14 @@ body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-seri
   .section{break-inside:avoid}
 }
 </style>
+
+<style>
+details summary::-webkit-details-marker { color: #8a9a7a; }
+details summary { list-style: none; }
+details summary::after { content: '+'; float: right; color: #8a9a7a; font-size: 1.1rem; font-weight: 300; }
+details[open] summary::after { content: '−'; }
+</style>
+
 </head>
 <body>
 
@@ -313,6 +321,128 @@ body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-seri
 
   <div class="info-box">
     <p style="font-style:italic">"I need assistive software called DysPhilter™. It helps me communicate at work. I can get it through Access to Work."</p>
+  </div>
+</div>
+
+
+<!-- ── Pricing ── -->
+<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem">
+  <div class="section-title" style="color:#f5ead0">Pricing</div>
+  <div class="section-sub" style="color:#8a9a7a;margin-bottom:0.5rem">Free for under 18s. Affordable for everyone else.</div>
+  <div style="text-align:center;margin-bottom:2rem">
+    <span style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.3rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:600;letter-spacing:0.05em">FREE FOR UNDER 18s</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1000px;margin:0 auto">
+
+    <!-- Free / Under 18 -->
+    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
+      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Under 18s</h4>
+      <div style="font-size:2rem;color:#8a9a7a;font-weight:700;margin-bottom:0.3rem">Free</div>
+      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">No cost. No limits.</p>
+      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">All core features. Full access. Forever.</p>
+    </div>
+
+    <!-- Student -->
+    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
+      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Student</h4>
+      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;3.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
+      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;35/year &mdash; save 27%</p>
+      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">2 devices. Needs a .ac.uk email. All personal features.</p>
+    </div>
+
+    <!-- NHS -->
+    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
+      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">NHS Staff</h4>
+      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;5.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
+      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;59/year &mdash; save 18%</p>
+      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">4 devices. Needs an nhs.net or nhs.uk email. Personal use.</p>
+    </div>
+
+    <!-- Standard Personal -->
+    <div style="background:#2a3555;border-radius:12px;padding:1.5rem;text-align:center;border:2px solid #8a9a7a">
+      <div style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.15rem 0.6rem;border-radius:12px;font-size:0.65rem;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.05em">MOST POPULAR</div>
+      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Personal</h4>
+      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;9.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
+      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;89/year &mdash; save 26%</p>
+      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">5 devices. Consumer integrations (Google, iCloud). Self-employed invoicing included.</p>
+    </div>
+
+    <!-- Access to Work -->
+    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
+      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Access to Work</h4>
+      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;450<span style="font-size:0.85rem;font-weight:400">/3 years</span></div>
+      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">DWP funded. You do not pay.</p>
+      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">Unlimited devices. Microsoft 365. Corporate integrations. Full support.</p>
+    </div>
+
+  </div>
+
+  <!-- Payment plans note -->
+  <div style="text-align:center;margin-top:1.5rem;max-width:600px;margin-left:auto;margin-right:auto">
+    <p style="color:#6a7a8a;font-size:0.78rem;line-height:1.6">Monthly payment plans available on all annual subscriptions. Self-employed users can generate invoices for tax purposes from inside the app. No one is turned away &mdash; if the price is a barrier, contact us.</p>
+  </div>
+</div>
+
+
+<!-- ── Works Alongside ── -->
+<div class="section" style="background:#1a2540;padding:2rem 1.5rem;text-align:center;border-top:1px solid #2a3555">
+  <div class="section-title" style="color:#f5ead0;font-size:1.1rem">Works Alongside What You Already Use</div>
+  <div class="section-sub" style="color:#8a9a7a;margin-bottom:1.5rem">DysPhilter does not replace your tools. It sits beside them.</div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;max-width:700px;margin:0 auto">
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Microsoft 365</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Google Workspace</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iCloud</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">WhatsApp</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Teams</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Slack</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iOS &amp; Android</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iPad &amp; Tablet</span>
+    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Desktop &amp; Laptop</span>
+  </div>
+</div>
+
+
+<!-- ── FAQ ── -->
+<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem;border-top:1px solid #2a3555">
+  <div class="section-title" style="color:#f5ead0;text-align:center">Questions</div>
+  <div class="section-sub" style="color:#8a9a7a;text-align:center;margin-bottom:2rem">Short answers to the things people ask</div>
+  <div style="max-width:650px;margin:0 auto">
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Do I need a diagnosis to use DysPhilter?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No. You do not need a diagnosis, a label, or a referral. DysPhilter is for everyone.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Is it really free for under 18s?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. Completely free, with no limits. We believe support should not depend on someone's age or income.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Can I get it through Access to Work?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. If you are working or self-employed, Access to Work can fund it for you. The government pays. You do not. See the funding section above.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Does it replace my other tools?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No. DysPhilter works alongside Microsoft 365, Google, WhatsApp, and everything else you already use. It sits beside your tools, not on top of them.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">I am self-employed. Can I claim this as a business expense?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. The Personal Edition includes self-employed invoicing. You can generate invoices from inside the app for your tax records.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">What if I cannot afford it?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No one is turned away. Student and NHS discounts are available, and if the price is still a barrier, contact us.</p>
+    </details>
+
+    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
+      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Is my data private?</summary>
+      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. Your data is yours. We do not sell it, share it, or use it for advertising. Everything is encrypted.</p>
+    </details>
+
   </div>
 </div>
 
