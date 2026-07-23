@@ -323,36 +323,63 @@ body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-seri
 <!-- ── What to Tell Your Assessor ── -->
 <div class="section">
   <div class="section-title">What to Tell Your AtW Assessor</div>
-  <div class="section-sub">Two versions — use whichever feels right</div>
+  <div class="section-sub">Pick the version that feels right for you</div>
 
-  <p style="font-size:0.9rem;color:#3a3530;margin-bottom:0.5rem">
-    <strong>The short version</strong> — easy to read aloud:
+  <p style="font-size:0.9rem;color:#3a3530;margin-bottom:1rem">
+    You do not have to say this from memory. Read it from your phone, print it, or share this page with your assessor before the meeting.
   </p>
 
-  <div class="quote-simple">
-    <p>
-      "I need a piece of software called DysPhilter. It helps me with communication at work. It filters harmful messages before they reach me, turns long complicated emails into simple summaries, and gives me tools to manage overwhelm. It also carries my access needs into every meeting and conversation so I do not have to keep explaining myself. It is an annual subscription and can be ordered through Neurobox."
-    </p>
+  <!-- Script toggle buttons -->
+  <div style="display:flex;gap:0.6rem;margin-bottom:1rem;flex-wrap:wrap">
+    <button onclick="showScript('short')" id="btn-short"
+      style="padding:0.5rem 1.2rem;border-radius:8px;border:2px solid #0d1526;background:#0d1526;color:#f5ead0;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s">
+      Short version
+    </button>
+    <button onclick="showScript('full')" id="btn-full"
+      style="padding:0.5rem 1.2rem;border-radius:8px;border:2px solid #0d1526;background:transparent;color:#0d1526;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.2s">
+      Full version (more detail)
+    </button>
   </div>
 
-  <p style="font-size:0.9rem;color:#3a3530;margin-top:1.2rem;margin-bottom:0.5rem">
-    <strong>The full version</strong> — if your assessor wants more detail:
-  </p>
+  <!-- Short version -->
+  <div id="script-short">
+    <div class="quote-simple">
+      <p>
+        "I need a piece of software called DysPhilter. It helps me with communication at work. It filters harmful messages before they reach me, turns long complicated emails into simple summaries, and gives me tools to manage overwhelm. It also carries my access needs into every meeting and conversation so I do not have to keep explaining myself. It is an annual subscription and can be ordered through Neurobox."
+      </p>
+    </div>
+    <p style="font-size:0.82rem;color:#8a9a7a;margin-top:0.6rem">Want to give your assessor more detail? Switch to the full version above.</p>
+  </div>
 
-  <div class="quote-box">
-    <p style="font-style:italic">
-      "I need assistive software called DysPhilter™. It is a communication accessibility platform built for neurodivergent people. It filters harmful content before it reaches me, gives me plain-language summaries of institutional communications, and provides regulation tools for when I am overwhelmed. It also includes a Universal Passport that carries my access needs into every interaction so I do not have to explain myself repeatedly. It is available as an annual SaaS subscription and can be supplied through Neurobox."
-    </p>
+  <!-- Full version (hidden by default) -->
+  <div id="script-full" style="display:none">
+    <div class="quote-box">
+      <p style="font-style:italic">
+        "I need assistive software called DysPhilter™. It is a communication accessibility platform built for neurodivergent people. It filters harmful content before it reaches me, gives me plain-language summaries of institutional communications, and provides regulation tools for when I am overwhelmed. It also includes a Universal Passport that carries my access needs into every interaction so I do not have to explain myself repeatedly. It is available as an annual SaaS subscription and can be supplied through Neurobox."
+      </p>
+    </div>
+    <p style="font-size:0.82rem;color:#8a9a7a;margin-top:0.6rem">Want the simpler version? Switch to the short version above.</p>
   </div>
 
   <div class="info-box" style="margin-top:1.2rem">
-    <p><strong>Too much to remember?</strong> You do not have to say all of this from memory. You can:</p>
+    <p><strong>You do not have to remember any of this.</strong> You can:</p>
     <p style="margin-top:0.5rem">• Read it from your phone during the assessment</p>
     <p>• Print this page and bring it with you</p>
-    <p>• Share this page link with your assessor by QR code or email</p>
+    <p>• Share this page with your assessor using the QR code below</p>
     <p>• Email the procurement summary above to your assessor before your meeting</p>
   </div>
 </div>
+
+<script>
+function showScript(version) {
+  document.getElementById('script-short').style.display = version === 'short' ? 'block' : 'none';
+  document.getElementById('script-full').style.display = version === 'full' ? 'block' : 'none';
+  document.getElementById('btn-short').style.background = version === 'short' ? '#0d1526' : 'transparent';
+  document.getElementById('btn-short').style.color = version === 'short' ? '#f5ead0' : '#0d1526';
+  document.getElementById('btn-full').style.background = version === 'full' ? '#0d1526' : 'transparent';
+  document.getElementById('btn-full').style.color = version === 'full' ? '#f5ead0' : '#0d1526';
+}
+</script>
 
 <!-- ── QR Code Section ── -->
 <div class="section qr-section">
