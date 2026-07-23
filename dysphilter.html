@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DysPhilter™ — Access to Work</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#3a3530;line-height:1.7}
+
+.header{background:#0d1526;padding:2.5rem 1.5rem;text-align:center}
+.header-logo{font-family:Georgia,serif;font-size:1.8rem;color:#f5ead0;letter-spacing:0.1em;font-weight:400}
+.header-tag{font-size:0.72rem;color:#8a9a7a;letter-spacing:0.3em;text-transform:uppercase;margin-top:0.5rem}
+
+.container{max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+
+.section{background:#faf6f0;border:1px solid #e0d9cc;border-radius:12px;padding:2rem;margin-bottom:1.5rem}
+.section-title{font-family:Georgia,serif;font-size:1.4rem;color:#0d1526;margin-bottom:0.3rem;font-weight:400}
+.section-sub{font-size:0.72rem;color:#8a9a7a;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:1.5rem}
+
+.support-block{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #e0d9cc}
+.support-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.support-icon{width:36px;height:36px;border-radius:8px;background:#0d1526;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.support-icon svg{width:20px;height:20px;fill:#f5ead0}
+.support-content h3{font-size:1rem;color:#0d1526;margin-bottom:0.3rem;font-weight:600}
+.support-content p{font-size:0.92rem;color:#5a554f;line-height:1.6}
+
+/* ── Category pill (collapsible header) ── */
+.cat{border:1px solid #e0d9cc;border-radius:20px;margin-bottom:0.8rem;overflow:hidden;transition:border-color 0.2s}
+.cat:hover{border-color:#c4b896}
+.cat-head{padding:0.7rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:#0d1526;font-weight:600;user-select:none;background:#f0ebe0;border-radius:20px}
+.cat-head:hover{background:#eae5d8}
+.cat-arrow{transition:transform 0.3s ease;color:#8a9a7a;font-size:0.75rem}
+.cat.open .cat-head{border-radius:20px 20px 0 0}
+.cat.open .cat-arrow{transform:rotate(180deg)}
+.cat-body{display:none;padding:1rem 1.2rem;background:#faf6f0;border-radius:0 0 20px 20px}
+.cat.open .cat-body{display:block}
+
+/* ── Inner pills ── */
+.pills{display:flex;flex-wrap:wrap;gap:0.4rem}
+.pill{padding:0.3rem 0.7rem;border:1px solid #e0d9cc;border-radius:16px;font-size:0.78rem;color:#5a554f;background:#f5f0e8;white-space:nowrap}
+
+.step{display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start}
+.step-num{width:28px;height:28px;border-radius:50%;background:#8a9a7a;color:#faf6f0;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0;font-weight:600}
+.step-content h4{font-size:0.92rem;color:#0d1526;margin-bottom:0.15rem;font-weight:600}
+.step-content p{font-size:0.88rem;color:#5a554f;line-height:1.6}
+
+.info-box{background:#e8e4dc;border-left:4px solid #8a9a7a;border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0}
+.info-box p{font-size:0.88rem;color:#3a3530;line-height:1.6}
+.info-box strong{color:#0d1526}
+
+.qr-section{text-align:center;padding:2rem}
+.qr-section h3{font-family:Georgia,serif;font-size:1.2rem;color:#0d1526;margin-bottom:0.5rem;font-weight:400}
+.qr-section p{font-size:0.85rem;color:#5a554f;margin-bottom:1.2rem}
+.qr-wrap{display:inline-block;background:#faf6f0;border:2px solid #e0d9cc;border-radius:12px;padding:1rem}
+.qr-wrap img{width:180px;height:180px;display:block}
+
+.cta{text-align:center;padding:2.5rem 1.5rem;background:#0d1526;margin-top:1.5rem}
+.cta h2{font-family:Georgia,serif;font-size:1.5rem;color:#f5ead0;font-weight:400;margin-bottom:0.8rem}
+.cta p{font-size:0.88rem;color:#c4b896;margin-bottom:1.5rem}
+.cta-button{display:inline-block;background:#8a9a7a;color:#0d1526;padding:0.7rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.05em}
+
+.footer{text-align:center;padding:2rem 1.5rem;background:#0d1526;color:#5a6a5a;font-size:0.75rem}
+
+@media print{
+  .header,.cta,.footer{background:#fff !important;color:#000 !important}
+  .cat-body{display:block !important}
+  .cat{break-inside:avoid}
+  .section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-logo">DysPhilter™</div>
+  <div class="header-tag">Personal Edition · Free Under 18 · Access to Work Funded</div>
+</div>
+
+<div class="container">
+
+<!-- ── What DysPhilter Can Do For You ── -->
+<div class="section">
+  <div class="section-title">How DysPhilter™ Can Support You</div>
+  <div class="section-sub">Four things it does — simply</div>
+
+  <div class="support-block">
+    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7l-9-5z"/></svg></div>
+    <div class="support-content">
+      <h3>Protects you from harmful messages</h3>
+      <p>If someone sends you something hostile, manipulative, or degrading — DysPhilter™ catches it before it reaches you. You do not have to read it. The evidence is kept safely.</p>
+    </div>
+  </div>
+
+  <div class="support-block">
+    <div class="support-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
+    <div class="support-content">
+      <h3>Carries your needs into every conversation</h3>
+      <p>You should not have to explain yourself over and over. DysPhilter™ holds your access needs and carries them into every interaction, meeting, and appointment.</p>
+    </div>
+  </div>
+
+  <div class="support-block">
+    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg></div>
+    <div class="support-content">
+      <h3>Keeps your evidence safe</h3>
+      <p>Every harmful message caught is timestamped and sealed. It can go to your lawyer, your union, or HR — without you ever having to re-read it.</p>
+    </div>
+  </div>
+
+  <div class="support-block">
+    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9z"/></svg></div>
+    <div class="support-content">
+      <h3>Helps when you are overwhelmed</h3>
+      <p>When everything is too much, DysPhilter™ gives you space to find your feet. No pressure. No checklist. Just a quiet place to settle.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── Who It Supports — Categorised with inner pills ── -->
+<div class="section">
+  <div class="section-title">Who It Supports</div>
+  <div class="section-sub">Tap a category to see what's covered</div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Neurodivergent profiles<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Autism</span>
+      <span class="pill">ADHD</span>
+      <span class="pill">AuDHD</span>
+      <span class="pill">Pervasive Drive for Autonomy</span>
+      <span class="pill">Late-diagnosed</span>
+      <span class="pill">Self-diagnosed</span>
+      <span class="pill">No diagnosis required</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Learning differences<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Dyslexia</span>
+      <span class="pill">Dyspraxia</span>
+      <span class="pill">Dysgraphia</span>
+      <span class="pill">Dyscalculia</span>
+      <span class="pill">SPLD</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Sensory & physical<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Colour blindness</span>
+      <span class="pill">Hard of hearing</span>
+      <span class="pill">Deaf</span>
+      <span class="pill">Sensory processing differences</span>
+      <span class="pill">Sensory overload</span>
+      <span class="pill">Auditory processing differences</span>
+      <span class="pill">Vestibular differences</span>
+      <span class="pill">Proprioception differences</span>
+      <span class="pill">Interoception differences</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Mental health & trauma<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">CPTSD</span>
+      <span class="pill">PTSD</span>
+      <span class="pill">RSD</span>
+      <span class="pill">Dissociation</span>
+      <span class="pill">Social anxiety</span>
+      <span class="pill">Panic</span>
+      <span class="pill">OCD</span>
+      <span class="pill">Alexithymia</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Communication<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Situational mutism</span>
+      <span class="pill">Selective mutism</span>
+      <span class="pill">Non-speaking</span>
+      <span class="pill">Semi-speaking</span>
+      <span class="pill">Aphasia</span>
+      <span class="pill">Stuttering</span>
+      <span class="pill">Stammering</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Executive function & energy<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Executive dysfunction</span>
+      <span class="pill">Working memory differences</span>
+      <span class="pill">Processing speed differences</span>
+      <span class="pill">Monotropism</span>
+      <span class="pill">Task switching difficulties</span>
+      <span class="pill">Autistic burnout</span>
+      <span class="pill">Meltdowns</span>
+      <span class="pill">Shutdowns</span>
+      <span class="pill">ARFID</span>
+      <span class="pill">Sleep differences</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Chronic illness & pain<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Chronic fatigue / ME-CFS</span>
+      <span class="pill">Fibromyalgia</span>
+      <span class="pill">Chronic pain</span>
+      <span class="pill">Migraine</span>
+      <span class="pill">Hypermobility / Ehlers-Danlos</span>
+      <span class="pill">POTS</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Hormonal & reproductive<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">PMDD</span>
+      <span class="pill">Endometriosis</span>
+      <span class="pill">PCOS</span>
+      <span class="pill">Perimenopause</span>
+      <span class="pill">Menopause</span>
+      <span class="pill">Pregnancy (antenatal / postnatal)</span>
+    </div></div>
+  </div>
+
+  <div class="cat">
+    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Life situations<span class="cat-arrow">▼</span></div>
+    <div class="cat-body"><div class="pills">
+      <span class="pill">Bereavement & grief</span>
+      <span class="pill">Gaslighting</span>
+      <span class="pill">Coercive control</span>
+      <span class="pill">Domestic abuse</span>
+      <span class="pill">Narcissistic abuse recovery</span>
+      <span class="pill">Toxic relationship recovery</span>
+    </div></div>
+  </div>
+
+  <p style="font-size:0.85rem;color:#5a6a5a;margin-top:1rem;font-style:italic">This is not an exhaustive list. If you are unsure whether it applies to you, it probably does.</p>
+</div>
+
+<!-- ── How to Get It Funded ── -->
+<div class="section">
+  <div class="section-title">How to Get It Funded</div>
+  <div class="section-sub">Access to Work — a grant you do not pay back</div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>Check you are eligible</h4>
+      <p>If you have a disability, health condition, or neurodivergent profile that affects your work — you can apply. Employed, self-employed, or about to start work. No formal diagnosis required in all cases.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>Apply</h4>
+      <p>Apply at <a href="https://www.gov.uk/access-to-work" style="color:#0d1526;border-bottom:1px solid #8a9a7a;text-decoration:none">gov.uk/access-to-work</a> or call <strong>0800 121 7479</strong>. Name DysPhilter™ as your preferred tool.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>Workplace needs assessment</h4>
+      <p>An adviser will arrange a workplace needs assessment. You can request DysPhilter™ as part of your recommendations.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>Get your recommendations</h4>
+      <p>Your AtW report will list DysPhilter™ and any other tools or coaching recommended for you.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h4>Order through your supplier</h4>
+      <p>Send your AtW report to your assistive technology supplier. They supply DysPhilter™ and provide training.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-content">
+      <h4>Reimbursement</h4>
+      <p>Your employer purchases the licence and claims back from DWP. Self-employed? You claim directly.</p>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <p><strong>Self-employed?</strong> You are eligible for 100% funding. No employer needed. Call <strong>0800 121 7479</strong>.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>The grant does not affect your other benefits.</strong> You do not pay it back.</p>
+  </div>
+</div>
+
+<!-- ── What to Say ── -->
+<div class="section">
+  <div class="section-title">What to Say on the Phone</div>
+  <div class="section-sub">If you need help finding the words</div>
+
+  <div class="info-box">
+    <p style="font-style:italic">"I need assistive software called DysPhilter™. It supports me at work by protecting me from harmful communication, carrying my access needs into every interaction so I do not have to explain myself repeatedly, and giving me space to regulate when I am overwhelmed. It is available as an annual subscription and can be supplied through my assistive technology provider."</p>
+  </div>
+</div>
+
+<!-- ── QR ── -->
+<div class="section qr-section">
+  <h3>Share This Page</h3>
+  <p>Scan to send this to your assessor, employer, or HR team</p>
+  <div class="qr-wrap">
+    <img src="https://base44.app/api/apps/6a086bdf9518d928b61eb935/files/mp/public/6a086bdf9518d928b61eb935/bcc1a2951_atw_qr_v3.png" alt="QR code">
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<div class="cta">
+  <h2>Ready to apply?</h2>
+  <p>Access to Work is a government grant. It does not affect your benefits. You do not pay it back.</p>
+  <a href="https://www.gov.uk/access-to-work" class="cta-button">Apply at gov.uk/access-to-work</a>
+</div>
+
+<div class="footer">
+  <p>DysPhilter™ · © Rosalind Millett 2026 · All rights reserved</p>
+  <p style="margin-top:0.5rem">Access to Work is administered by the Department for Work and Pensions (DWP)</p>
+</div>
+
+</div>
+</body>
+</html>
