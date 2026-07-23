@@ -326,6 +326,19 @@ body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-seri
 </div>
 
 <!-- ── CTA ── -->
+
+<!-- ── Email Signup ── -->
+<div style="background:#0d1526;padding:2.5rem 1.5rem;text-align:center">
+  <h3 style="font-family:Georgia,serif;font-size:1.3rem;color:#f5ead0;font-weight:400;margin-bottom:0.5rem">Stay Connected</h3>
+  <p style="color:#8a9a7a;font-size:0.85rem;margin-bottom:1.5rem;letter-spacing:0.02em">Get updates on DysPhilter™ features, Access to Work funding, and launch news.</p>
+  <form id="signup-form" style="max-width:380px;margin:0 auto">
+    <input type="email" id="signup-email" placeholder="your@email.com" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#1a2030;color:#f5ead0;font-size:0.9rem;margin-bottom:0.8rem;box-sizing:border-box" />
+    <button type="submit" style="width:100%;padding:0.7rem 1.5rem;background:#8a9a7a;color:#0d1526;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.05em">Sign up for updates</button>
+    <p id="signup-msg" style="color:#8a9a7a;font-size:0.78rem;margin-top:0.6rem;min-height:1rem"></p>
+  </form>
+  <p style="color:#5a6a7a;font-size:0.72rem;margin-top:1rem">Free for everyone under 18. We will never share your email.</p>
+</div>
+
 <div class="cta">
   <h2>Ready to apply?</h2>
   <p>Access to Work is a government grant. It does not affect your benefits. You do not pay it back.</p>
@@ -338,5 +351,47 @@ body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-seri
 </div>
 
 </div>
+
+<script>
+document.getElementById('signup-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var email = document.getElementById('signup-email').value;
+  var msg = document.getElementById('signup-msg');
+  var btn = e.target.querySelector('button');
+  
+  if (!email) { msg.textContent = 'Please enter your email.'; return; }
+  
+  btn.textContent = 'Signing up...';
+  btn.disabled = true;
+  msg.textContent = '';
+  
+  try {
+    var response = await fetch( + api_url + , {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, source: 'dysphilter_landing_page' })
+    });
+    var data = await response.json();
+    
+    if (response.ok) {
+      msg.style.color = '#8a9a7a';
+      msg.textContent = 'Thank you. We will be in touch.';
+      document.getElementById('signup-email').value = '';
+      btn.textContent = 'Signed up';
+    } else {
+      msg.style.color = '#c4a0a0';
+      msg.textContent = data.error || 'Something went wrong. Please try again.';
+      btn.textContent = 'Sign up for updates';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    msg.style.color = '#c4a0a0';
+    msg.textContent = 'Something went wrong. Please try again.';
+    btn.textContent = 'Sign up for updates';
+    btn.disabled = false;
+  }
+});
+</script>
+
 </body>
 </html>
