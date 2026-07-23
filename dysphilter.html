@@ -9,275 +9,185 @@
 html{scroll-behavior:smooth}
 body{background:#f5f0e8;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#3a3530;line-height:1.7}
 
-.header{background:#1a2540;padding:2.5rem 1.5rem;text-align:center}
+/* ── Header ── */
+.header{background:#0d1526;padding:2.5rem 1.5rem;text-align:center}
 .header-logo{font-family:Georgia,serif;font-size:1.8rem;color:#f5ead0;letter-spacing:0.1em;font-weight:400}
 .header-tag{font-size:0.72rem;color:#8a9a7a;letter-spacing:0.3em;text-transform:uppercase;margin-top:0.5rem}
 
-.container{max-width:680px;margin:0 auto;padding:2rem 1.5rem}
+/* ── Container ── */
+.container{max-width:780px;margin:0 auto;padding:2rem 1.5rem}
 
+/* ── Section ── */
 .section{background:#faf6f0;border:1px solid #e0d9cc;border-radius:12px;padding:2rem;margin-bottom:1.5rem}
-.section-title{font-family:Georgia,serif;font-size:1.4rem;color:#1a2540;margin-bottom:0.3rem;font-weight:400}
+.section-title{font-family:Georgia,serif;font-size:1.4rem;color:#0d1526;margin-bottom:0.3rem;font-weight:400}
 .section-sub{font-size:0.72rem;color:#8a9a7a;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:1.5rem}
 
-.support-block{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid #e0d9cc}
-.support-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.support-icon{width:36px;height:36px;border-radius:8px;background:#1a2540;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.support-icon svg{width:20px;height:20px;fill:#f5ead0}
-.support-content h3{font-size:1rem;color:#1a2540;margin-bottom:0.3rem;font-weight:600}
-.support-content p{font-size:0.92rem;color:#5a554f;line-height:1.6}
+/* ── Three Bullets ── */
+.bullet-block{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #e0d9cc}
+.bullet-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.bullet-icon{width:36px;height:36px;border-radius:8px;background:#0d1526;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;color:#f5ead0;font-weight:600;font-family:Georgia,serif}
+.bullet-content h3{font-size:0.95rem;color:#0d1526;margin-bottom:0.3rem;font-weight:600}
+.bullet-content p{font-size:0.9rem;color:#5a554f;line-height:1.6}
 
-/* ── Category pill (collapsible header) ── */
-.cat{border:1px solid #e0d9cc;border-radius:20px;margin-bottom:0.8rem;overflow:hidden;transition:border-color 0.2s}
-.cat:hover{border-color:#c4b896}
-.cat-head{padding:0.7rem 1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:#1a2540;font-weight:600;user-select:none;background:#f0ebe0;border-radius:20px}
-.cat-head:hover{background:#eae5d8}
-.cat-arrow{transition:transform 0.3s ease;color:#8a9a7a;font-size:0.75rem}
-.cat.open .cat-head{border-radius:20px 20px 0 0}
-.cat.open .cat-arrow{transform:rotate(180deg)}
-.cat-body{display:none;padding:1rem 1.2rem;background:#faf6f0;border-radius:0 0 20px 20px}
-.cat.open .cat-body{display:block}
-
-/* ── Inner pills ── */
-.pills{display:flex;flex-wrap:wrap;gap:0.4rem}
-.pill{padding:0.3rem 0.7rem;border:1px solid #e0d9cc;border-radius:16px;font-size:0.78rem;color:#5a554f;background:#f5f0e8;white-space:nowrap}
-
+/* ── How It Works ── */
 .step{display:flex;gap:1rem;margin-bottom:1rem;align-items:flex-start}
 .step-num{width:28px;height:28px;border-radius:50%;background:#8a9a7a;color:#faf6f0;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0;font-weight:600}
-.step-content h4{font-size:0.92rem;color:#1a2540;margin-bottom:0.15rem;font-weight:600}
+.step-content h4{font-size:0.92rem;color:#0d1526;margin-bottom:0.15rem;font-weight:600}
 .step-content p{font-size:0.88rem;color:#5a554f;line-height:1.6}
 
-.info-box{background:#e8e4dc;border-left:4px solid #8a9a7a;border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0}
-.info-box p{font-size:0.88rem;color:#3a3530;line-height:1.6}
-.info-box strong{color:#1a2540}
+/* ── Neurobox ── */
+.neurobox-box{background:#0d1526;border-radius:12px;padding:1.8rem;margin-top:1.5rem}
+.neurobox-box h3{font-family:Georgia,serif;font-size:1.1rem;color:#f5ead0;margin-bottom:0.8rem;font-weight:400}
+.neurobox-box p{font-size:0.88rem;color:#c4b896;line-height:1.6;margin-bottom:0.5rem}
+.neurobox-box a{color:#8a9a7a;text-decoration:none;border-bottom:1px solid #8a9a7a}
+.neurobox-contact{display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap}
+.neurobox-contact-item{font-size:0.82rem;color:#c4b896}
+.neurobox-contact-item strong{color:#f5ead0}
 
+/* ── QR Section ── */
 .qr-section{text-align:center;padding:2rem}
-.qr-section h3{font-family:Georgia,serif;font-size:1.2rem;color:#1a2540;margin-bottom:0.5rem;font-weight:400}
+.qr-section h3{font-family:Georgia,serif;font-size:1.2rem;color:#0d1526;margin-bottom:0.5rem;font-weight:400}
 .qr-section p{font-size:0.85rem;color:#5a554f;margin-bottom:1.2rem}
 .qr-wrap{display:inline-block;background:#faf6f0;border:2px solid #e0d9cc;border-radius:12px;padding:1rem}
 .qr-wrap img{width:180px;height:180px;display:block}
 
-.cta{text-align:center;padding:2.5rem 1.5rem;background:#1a2540;margin-top:1.5rem}
+/* ── CTA ── */
+.cta{text-align:center;padding:2.5rem 1.5rem;background:#0d1526;margin-top:1.5rem}
 .cta h2{font-family:Georgia,serif;font-size:1.5rem;color:#f5ead0;font-weight:400;margin-bottom:0.8rem}
 .cta p{font-size:0.88rem;color:#c4b896;margin-bottom:1.5rem}
-.cta-button{display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.7rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.05em}
+.cta-button{display:inline-block;background:#8a9a7a;color:#0d1526;padding:0.7rem 1.8rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.05em}
+.cta-secondary{display:inline-block;margin-left:0.8rem;color:#c4b896;padding:0.7rem 1.2rem;border:1px solid #2a3a55;border-radius:8px;font-size:0.85rem;text-decoration:none}
 
-.footer{text-align:center;padding:2rem 1.5rem;background:#1a2540;color:#5a6a5a;font-size:0.75rem}
+/* ── Info Box ── */
+.info-box{background:#e8e4dc;border-left:4px solid #8a9a7a;border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin:1.2rem 0}
+.info-box p{font-size:0.85rem;color:#3a3530;line-height:1.6}
+.info-box strong{color:#0d1526}
 
+/* ── Quote Box ── */
+.quote-box{background:#e8e4dc;border-left:4px solid #0d1526;border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0}
+.quote-box p{font-size:0.88rem;color:#3a3530;line-height:1.7}
+.quote-simple{background:#f0ede5;border:1px solid #d4cec0;border-radius:8px;padding:1.2rem 1.4rem;margin:1rem 0}
+.quote-simple p{font-size:0.9rem;color:#3a3530;line-height:1.7}
+.quote-simple strong{color:#0d1526}
+
+/* ── Armed Section ── */
+.armed-box{background:#0d1526;border-radius:12px;padding:1.8rem;margin:1rem 0}
+.armed-box h3{font-family:Georgia,serif;font-size:1.1rem;color:#f5ead0;margin-bottom:1rem;font-weight:400}
+.armed-box p{font-size:0.88rem;color:#c4b896;line-height:1.6;margin-bottom:0.5rem}
+.armed-box strong{color:#f5ead0}
+
+/* ── Footer ── */
+.footer{text-align:center;padding:2rem 1.5rem;background:#0d1526;color:#5a6a5a;font-size:0.75rem}
+.footer a{color:#8a9a7a;text-decoration:none}
+
+/* ── Badge ── */
+.badge-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+.badge{padding:0.3rem 0.8rem;border:1px solid #e0d9cc;border-radius:20px;font-size:0.72rem;color:#5a6a5a;background:#faf6f0}
+
+/* ── Print friendly ── */
 @media print{
-  .header,.cta,.footer{background:#fff !important;color:#000 !important}
-  .cat-body{display:block !important}
-  .cat{break-inside:avoid}
+  .header,.cta,.footer,.armed-box{background:#fff !important;color:#000 !important}
+  .neurobox-box,.armed-box{background:#fff !important;border:1px solid #000}
+  .neurobox-box h3,.neurobox-box p,.cta h2,.cta p,.armed-box h3,.armed-box p,.armed-box strong{color:#000 !important}
   .section{break-inside:avoid}
 }
 </style>
-
-<style>
-details summary::-webkit-details-marker { color: #8a9a7a; }
-details summary { list-style: none; }
-details summary::after { content: '+'; float: right; color: #8a9a7a; font-size: 1.1rem; font-weight: 300; }
-details[open] summary::after { content: '−'; }
-</style>
-
 </head>
 <body>
 
+<!-- Header -->
 <div class="header">
   <div class="header-logo">DysPhilter™</div>
-  <div class="header-tag">Personal Edition · Free Under 18 · Access to Work Funded</div>
+  <div class="header-tag">Access to Work · Funded Assistive Software</div>
 </div>
 
 <div class="container">
 
-<!-- ── What DysPhilter Can Do For You ── -->
+<!-- ── What DysPhilter Does ── -->
 <div class="section">
-  <div class="section-title">How DysPhilter™ Can Support You</div>
-  <div class="section-sub">Four things it does — simply</div>
+  <div class="section-title">How DysPhilter™ Supports You at Work</div>
+  <div class="section-sub">Built from lived neurodivergent experience</div>
+  
+  <p style="font-size:0.92rem;color:#3a3530;margin-bottom:1.2rem">
+    DysPhilter™ is a privacy-first communication and accessibility platform built specifically for neurodivergent people in the workplace. It sits between you and the tools you already use — reducing overwhelm, filtering harmful communication before it reaches you, and giving you a structured way to carry your access needs into every conversation, meeting, and interaction.
+  </p>
 
-  <div class="support-block">
-    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5 4 9 9 10 5-1 9-5 9-10V7l-9-5z"/></svg></div>
-    <div class="support-content">
-      <h3>Protects you from harmful messages</h3>
-      <p>If someone sends you something hostile, manipulative, or degrading — DysPhilter™ catches it before it reaches you. You do not have to read it. The evidence is kept safely.</p>
+  <div class="badge-row">
+    <span class="badge">Autism</span>
+    <span class="badge">ADHD</span>
+    <span class="badge">AuDHD</span>
+    <span class="badge">Dyslexia</span>
+    <span class="badge">Dyspraxia</span>
+    <span class="badge">Dysgraphia</span>
+    <span class="badge">Dyscalculia</span>
+    <span class="badge">Tourette's Syndrome</span>
+    <span class="badge">SPLD</span>
+    <span class="badge">Colour blindness</span>
+    <span class="badge">Hard of hearing / Deaf</span>
+    <span class="badge">RSD</span>
+    <span class="badge">Pervasive Drive for Autonomy</span>
+    <span class="badge">CPTSD</span>
+    <span class="badge">Sensory differences</span>
+    <span class="badge">No diagnosis required</span>
+  </div>
+</div>
+
+<!-- ── Three-Bullet Procurement Summary ── -->
+<div class="section">
+  <div class="section-title">Access to Work Procurement Summary</div>
+  <div class="section-sub">For AtW assessors, employers, and assistive technology suppliers</div>
+
+  <div class="bullet-block">
+    <div class="bullet-icon">1</div>
+    <div class="bullet-content">
+      <h3>The Workplace Barrier Solved</h3>
+      <p>Actively mitigates severe executive dysfunction, sensory overwhelm, cognitive fatigue, Rejection Sensitive Dysphoria, processing differences (dyslexia, dyspraxia, dysgraphia, dyscalculia, SPLD), colour vision differences, hearing differences, Tourette's syndrome, and communication-triggered distress by providing a send-side intercept that filters hostile or harmful content before it reaches the neurodivergent user — combined with a Universal Passport that carries their access needs, communication preferences, and evidence into every interaction without requiring them to explain themselves repeatedly.</p>
     </div>
   </div>
 
-  <div class="support-block">
-    <div class="support-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg></div>
-    <div class="support-content">
-      <h3>Carries your needs into every conversation</h3>
-      <p>You should not have to explain yourself over and over. DysPhilter™ holds your access needs and carries them into every interaction, meeting, and appointment.</p>
+  <div class="bullet-block">
+    <div class="bullet-icon">2</div>
+    <div class="bullet-content">
+      <h3>How It Works (SaaS / Middleware Integration)</h3>
+      <p>Operates as a seamless digital accessibility layer that sits quietly between standard corporate communication tools (email, messaging platforms, institutional portals) and the end-user. It transforms overwhelming communication into plain-language summaries, filters harmful content before delivery, provides regulation tools matched to the user's current capacity, and creates a predictable, customisable, focus-friendly experience — without storing or reading the content it processes.</p>
     </div>
   </div>
 
-  <div class="support-block">
-    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg></div>
-    <div class="support-content">
-      <h3>Keeps your evidence safe</h3>
-      <p>Every harmful message caught is timestamped and sealed. It can go to your lawyer, your union, or HR — without you ever having to re-read it.</p>
-    </div>
-  </div>
-
-  <div class="support-block">
-    <div class="support-icon"><svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11s4 9 9 9 9-4 9-9-4-9-9-9z"/></svg></div>
-    <div class="support-content">
-      <h3>Helps when you are overwhelmed</h3>
-      <p>When everything is too much, DysPhilter™ gives you space to find your feet. No pressure. No checklist. Just a quiet place to settle.</p>
+  <div class="bullet-block">
+    <div class="bullet-icon">3</div>
+    <div class="bullet-content">
+      <h3>Procurement & Licensing Details</h3>
+      <p>Available as an individual or enterprise annual Software-as-a-Service (SaaS) subscription. We provide fully itemised quotes with clear business and VAT registration details, allowing corporate employers to purchase licenses and claim reimbursement via standard DWP Access to Work grant allocations. Self-employed individuals are eligible for 100% AtW funding. Free for all users under 18.</p>
     </div>
   </div>
 </div>
 
-<!-- ── Who It Supports — Categorised with inner pills ── -->
+<!-- ── How AtW Funding Works ── -->
 <div class="section">
-  <div class="section-title">Who It Supports</div>
-  <div class="section-sub">Tap a category to see what's covered</div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Neurodivergent profiles<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Autism</span>
-      <span class="pill">ADHD</span>
-      <span class="pill">AuDHD</span>
-      <span class="pill">Pervasive Drive for Autonomy</span>
-      <span class="pill">Late-diagnosed</span>
-      <span class="pill">Self-diagnosed</span>
-      <span class="pill">No diagnosis required</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Learning differences<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Dyslexia</span>
-      <span class="pill">Dyspraxia</span>
-      <span class="pill">Dysgraphia</span>
-      <span class="pill">Dyscalculia</span>
-      <span class="pill">SPLD</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Sensory & physical<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Colour blindness</span>
-      <span class="pill">Hard of hearing</span>
-      <span class="pill">Deaf</span>
-      <span class="pill">Sensory processing differences</span>
-      <span class="pill">Sensory overload</span>
-      <span class="pill">Auditory processing differences</span>
-      <span class="pill">Vestibular differences</span>
-      <span class="pill">Proprioception differences</span>
-      <span class="pill">Interoception differences</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Mental health & trauma<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">CPTSD</span>
-      <span class="pill">PTSD</span>
-      <span class="pill">RSD</span>
-      <span class="pill">Dissociation</span>
-      <span class="pill">Social anxiety</span>
-      <span class="pill">Panic</span>
-      <span class="pill">OCD</span>
-      <span class="pill">Alexithymia</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Communication<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Situational mutism</span>
-      <span class="pill">Selective mutism</span>
-      <span class="pill">Non-speaking</span>
-      <span class="pill">Semi-speaking</span>
-      <span class="pill">Aphasia</span>
-      <span class="pill">Stuttering</span>
-      <span class="pill">Stammering</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Executive function & energy<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Executive dysfunction</span>
-      <span class="pill">Working memory differences</span>
-      <span class="pill">Processing speed differences</span>
-      <span class="pill">Monotropism</span>
-      <span class="pill">Task switching difficulties</span>
-      <span class="pill">Autistic burnout</span>
-      <span class="pill">Meltdowns</span>
-      <span class="pill">Shutdowns</span>
-      <span class="pill">ARFID</span>
-      <span class="pill">Sleep differences</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Chronic illness & pain<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Chronic fatigue / ME-CFS</span>
-      <span class="pill">Fibromyalgia</span>
-      <span class="pill">Chronic pain</span>
-      <span class="pill">Migraine</span>
-      <span class="pill">Hypermobility / Ehlers-Danlos</span>
-      <span class="pill">POTS</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Hormonal & reproductive<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">PMDD</span>
-      <span class="pill">Endometriosis</span>
-      <span class="pill">PCOS</span>
-      <span class="pill">Perimenopause</span>
-      <span class="pill">Menopause</span>
-      <span class="pill">Pregnancy (antenatal / postnatal)</span>
-    </div></div>
-  </div>
-
-  <div class="cat">
-    <div class="cat-head" onclick="this.parentElement.classList.toggle('open')">Life situations<span class="cat-arrow">▼</span></div>
-    <div class="cat-body"><div class="pills">
-      <span class="pill">Bereavement & grief</span>
-      <span class="pill">Gaslighting</span>
-      <span class="pill">Coercive control</span>
-      <span class="pill">Domestic abuse</span>
-      <span class="pill">Narcissistic abuse recovery</span>
-      <span class="pill">Toxic relationship recovery</span>
-    </div></div>
-  </div>
-
-  <p style="font-size:0.85rem;color:#5a6a5a;margin-top:1rem;font-style:italic">This is not an exhaustive list. If you are unsure whether it applies to you, it probably does.</p>
-</div>
-
-<!-- ── How to Get It Funded ── -->
-<div class="section">
-  <div class="section-title">How to Get It Funded</div>
-  <div class="section-sub">Access to Work — a grant you do not pay back</div>
+  <div class="section-title">Access to Work — How to Get DysPhilter™ Funded</div>
+  <div class="section-sub">A government grant that pays for assistive software</div>
 
   <div class="step">
     <div class="step-num">1</div>
     <div class="step-content">
       <h4>Check you are eligible</h4>
-      <p>If you have a disability, health condition, or neurodivergent profile that affects your work — you can apply. Employed, self-employed, or about to start work. No formal diagnosis required in all cases.</p>
+      <p>You can apply if you have a disability, health condition, or neurodivergent profile that affects your ability to work. You must be employed, self-employed, or about to start work. No formal diagnosis is required in all cases — functional impact is what matters.</p>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">2</div>
     <div class="step-content">
-      <h4>Apply</h4>
-      <p>Apply at <a href="https://www.gov.uk/access-to-work" style="color:#1a2540;border-bottom:1px solid #8a9a7a;text-decoration:none">gov.uk/access-to-work</a> or call <strong>0800 121 7479</strong>. Name DysPhilter™ as your preferred tool.</p>
+      <h4>Apply to Access to Work</h4>
+      <p>Apply online at <a href="https://www.gov.uk/access-to-work" style="color:#0d1526;text-decoration:none;border-bottom:1px solid #8a9a7a">gov.uk/access-to-work</a> or call <strong>0800 121 7479</strong>. Tell them you need assistive software for your neurodivergent profile and name DysPhilter™ as your preferred tool.</p>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">3</div>
     <div class="step-content">
-      <h4>Workplace needs assessment</h4>
-      <p>An adviser will arrange a workplace needs assessment. You can request DysPhilter™ as part of your recommendations.</p>
+      <h4>Workplace Needs Assessment</h4>
+      <p>An AtW adviser will arrange a Workplace Needs Assessment. The assessor will look at your work environment and recommend support. You can request DysPhilter™ as part of your recommendations.</p>
     </div>
   </div>
 
@@ -285,15 +195,15 @@ details[open] summary::after { content: '−'; }
     <div class="step-num">4</div>
     <div class="step-content">
       <h4>Get your recommendations</h4>
-      <p>Your AtW report will list DysPhilter™ and any other tools or coaching recommended for you.</p>
+      <p>Your AtW report will list recommended software, equipment, and support. It will name DysPhilter™ and any other tools or coaching recommended for your specific needs.</p>
     </div>
   </div>
 
   <div class="step">
     <div class="step-num">5</div>
     <div class="step-content">
-      <h4>Order through your supplier</h4>
-      <p>Send your AtW report to your assistive technology supplier. They supply DysPhilter™ and provide training.</p>
+      <h4>Order through Neurobox (or your chosen supplier)</h4>
+      <p>Send your AtW report to Neurobox. They can supply DysPhilter™ and any other recommendations from your report — one supplier, one invoice, one point of contact. They will also provide training on how to use DysPhilter™ for your specific workplace needs.</p>
     </div>
   </div>
 
@@ -301,339 +211,174 @@ details[open] summary::after { content: '−'; }
     <div class="step-num">6</div>
     <div class="step-content">
       <h4>Reimbursement</h4>
-      <p>Your employer purchases the licence and claims back from DWP. Self-employed? You claim directly.</p>
+      <p>Your employer purchases the license and claims reimbursement from DWP. Self-employed individuals can claim directly. If you order through Neurobox, you get one itemised invoice — which means faster reimbursement.</p>
     </div>
   </div>
 
   <div class="info-box">
-    <p><strong>Self-employed?</strong> You are eligible for 100% funding. No employer needed. Call <strong>0800 121 7479</strong>.</p>
+    <p><strong>Self-employed?</strong> You are eligible for 100% Access to Work funding. You apply directly — no employer needed. Call <strong>0800 121 7479</strong> or apply at <a href="https://www.gov.uk/access-to-work" style="color:#0d1526;text-decoration:none;border-bottom:1px solid #8a9a7a">gov.uk/access-to-work</a>.</p>
   </div>
 
   <div class="info-box">
-    <p><strong>The grant does not affect your other benefits.</strong> You do not pay it back.</p>
+    <p><strong>The grant does not affect your other benefits.</strong> You do not have to pay it back. Access to Work is separate from necessary adjustments — your employer still has their own legal duty under the Equality Act 2010.</p>
   </div>
 </div>
 
-<!-- ── What to Say ── -->
+<!-- ── How to Use Your Quote ── -->
 <div class="section">
-  <div class="section-title">What to Say on the Phone</div>
-  <div class="section-sub">If you need help finding the words</div>
+  <div class="section-title">How to Use Your DysPhilter™ Quote</div>
+  <div class="section-sub">Your quote is a tool — take it WITH you to Access to Work</div>
 
-  <div class="info-box">
-    <p style="font-style:italic">"I need assistive software called DysPhilter™. It helps me communicate at work. I can get it through Access to Work."</p>
+  <p style="font-size:0.92rem;color:#3a3530;margin-bottom:1rem">
+    Your DysPhilter™ quote is not sent to Access to Work for you. It is something you bring <strong>with you</strong> to your application and assessment. Here is exactly what to do with it:
+  </p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <h4>Get your quote from DysPhilter</h4>
+      <p>Request a quote through this page. You will receive an itemised document with pricing, VAT details, and a clear description of what DysPhilter™ does.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <h4>Apply to Access to Work</h4>
+      <p>Go to <a href="https://www.gov.uk/access-to-work" style="color:#0d1526;text-decoration:none;border-bottom:1px solid #8a9a7a">gov.uk/access-to-work</a> or call <strong>0800 121 7479</strong>. Tell them you need assistive communication software. You do not need to send the quote at this stage.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <h4>Bring the quote to your assessment</h4>
+      <p>When your Workplace Needs Assessment is booked, bring your DysPhilter™ quote with you — either as a printed copy or a PDF on your phone. The assessor will use it to understand what DysPhilter™ does and how much it costs.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <h4>Use the script below</h4>
+      <p>During your assessment, use the simple script on this page to explain why you need DysPhilter™. You do not have to remember everything — the script is short and you can read it.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <h4>Share this page with your assessor</h4>
+      <p>The three-bullet procurement summary above is written for assessors. You can share this page link, or print it and bring it with you. The QR code at the bottom of this page links straight here.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-content">
+      <h4>Order once approved</h4>
+      <p>Once DysPhilter™ is in your AtW report, order through Neurobox (or your chosen supplier). They will send one itemised invoice that your employer can use to claim reimbursement from DWP.</p>
+    </div>
+  </div>
+
+  <div class="armed-box">
+    <h3>What you are armed with</h3>
+    <p><strong>1.</strong> Your DysPhilter™ quote — itemised, with VAT details</p>
+    <p><strong>2.</strong> The simple script below — what to say to your assessor</p>
+    <p><strong>3.</strong> Neurobox supplier details — so the assessor knows where to source it</p>
+    <p><strong>4.</strong> This page — shareable by QR code or link</p>
   </div>
 </div>
 
+<!-- ── Neurobox Section ── -->
+<div class="section">
+  <div class="section-title">Ordering Through Neurobox</div>
+  <div class="section-sub">UK assistive technology supplier — Access to Work approved</div>
 
-<!-- ── Pricing ── -->
-<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem">
-  <div class="section-title" style="color:#f5ead0">Pricing</div>
-  <div class="section-sub" style="color:#8a9a7a;margin-bottom:0.5rem">Free for under 18s. Affordable for everyone else.</div>
-  <div style="text-align:center;margin-bottom:2rem">
-    <span style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.3rem 1rem;border-radius:20px;font-size:0.8rem;font-weight:600;letter-spacing:0.05em">FREE FOR UNDER 18s</span>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:1000px;margin:0 auto">
+  <p style="font-size:0.9rem;color:#3a3530;margin-bottom:1rem">
+    Neurobox is a leading UK workplace adjustments provider. They can supply DysPhilter™ and any other recommendations from your AtW report — meaning one supplier, one invoice, and faster reimbursement from DWP.
+  </p>
 
-    <!-- Free / Under 18 -->
-    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
-      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Under 18s</h4>
-      <div style="font-size:2rem;color:#8a9a7a;font-weight:700;margin-bottom:0.3rem">Free</div>
-      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">No cost. No limits.</p>
-      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">All core features. Full access. Forever.</p>
+  <div class="neurobox-box">
+    <h3>Neurobox — Access to Work Supplier</h3>
+    <p>Neurobox can fulfil all of your AtW recommendations — software, hardware, training, and coaching. By using them as your single supplier, you get:</p>
+    <p>• One itemised invoice for DWP reimbursement</p>
+    <p>• A dedicated Client Relationship Manager</p>
+    <p>• Price matching on all recommendations</p>
+    <p>• Free technical support for two years</p>
+    <p>• Case management through their neurohub platform</p>
+
+    <div class="neurobox-contact">
+      <div class="neurobox-contact-item"><strong>Phone:</strong> 01223 608 491</div>
+      <div class="neurobox-contact-item"><strong>Email:</strong> atw@neurobox.co.uk</div>
+      <div class="neurobox-contact-item"><strong>Website:</strong> <a href="https://neurobox.co.uk/access-to-work/" style="color:#8a9a7a;text-decoration:none;border-bottom:1px solid #8a9a7a">neurobox.co.uk/access-to-work</a></div>
     </div>
 
-    <!-- Student -->
-    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
-      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Student</h4>
-      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;3.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
-      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;35/year &mdash; save 27%</p>
-      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">2 devices. Needs a .ac.uk email. All personal features.</p>
-    </div>
-
-    <!-- NHS -->
-    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
-      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">NHS Staff</h4>
-      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;5.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
-      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;59/year &mdash; save 18%</p>
-      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">4 devices. Needs an nhs.net or nhs.uk email. Personal use.</p>
-    </div>
-
-    <!-- Standard Personal -->
-    <div style="background:#2a3555;border-radius:12px;padding:1.5rem;text-align:center;border:2px solid #8a9a7a">
-      <div style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.15rem 0.6rem;border-radius:12px;font-size:0.65rem;font-weight:600;margin-bottom:0.4rem;letter-spacing:0.05em">MOST POPULAR</div>
-      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Personal</h4>
-      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;9.99<span style="font-size:0.85rem;font-weight:400">/month</span></div>
-      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">&pound;89/year &mdash; save 26%</p>
-      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">5 devices. Consumer integrations (Google, iCloud). Self-employed invoicing included.</p>
-    </div>
-
-    <!-- Access to Work -->
-    <div style="background:#243050;border-radius:12px;padding:1.5rem;text-align:center;border:1px solid #3a4a5a">
-      <h4 style="color:#f5ead0;font-size:1rem;margin-bottom:0.3rem;font-weight:600">Access to Work</h4>
-      <div style="font-size:1.8rem;color:#8a9a7a;font-weight:700;margin-bottom:0.2rem">&pound;450<span style="font-size:0.85rem;font-weight:400">/3 years</span></div>
-      <p style="color:#8a9a7a;font-size:0.78rem;margin-bottom:0.8rem">DWP funded. You do not pay.</p>
-      <p style="color:#6a7a8a;font-size:0.75rem;line-height:1.5">Unlimited devices. Microsoft 365. Corporate integrations. Full support.</p>
-    </div>
-
-  </div>
-
-  <!-- Payment plans note -->
-  <div style="text-align:center;margin-top:1.5rem;max-width:600px;margin-left:auto;margin-right:auto">
-    <p style="color:#6a7a8a;font-size:0.78rem;line-height:1.6">Monthly payment plans available on all annual subscriptions. Self-employed users can generate invoices for tax purposes from inside the app. No one is turned away &mdash; if the price is a barrier, contact us.</p>
+    <p style="margin-top:1rem;font-size:0.82rem;color:#8a9a7a">
+      When contacting Neurobox, mention DysPhilter™ by name. Send your AtW report as a PDF. Include your name, email, phone number, and shipping address. Purchase orders should go to atw@neurobox.co.uk.
+    </p>
   </div>
 </div>
 
+<!-- ── What to Tell Your Assessor ── -->
+<div class="section">
+  <div class="section-title">What to Tell Your AtW Assessor</div>
+  <div class="section-sub">Two versions — use whichever feels right</div>
 
+  <p style="font-size:0.9rem;color:#3a3530;margin-bottom:0.5rem">
+    <strong>The short version</strong> — easy to read aloud:
+  </p>
 
-<!-- ── Free Trial Banner ── -->
-<div style="background:#2a3555;padding:1.5rem 1.5rem;text-align:center;border-top:1px solid #3a4a5a">
-  <div style="max-width:500px;margin:0 auto">
-    <h4 style="color:#f5ead0;font-size:1rem;font-weight:600;margin-bottom:0.4rem">Try everything free for 14 days</h4>
-    <p style="color:#8a9a7a;font-size:0.82rem;line-height:1.5;margin-bottom:1rem">Full access. All features. All your devices. No card needed to start. After 14 days, pick the plan that fits &mdash; or do not, and owe nothing.</p>
-    <a href="#" onclick="alert('Free trial sign-up opens at launch. Enter your email below and we will let you know first.');return false" style="display:inline-block;background:#8a9a7a;color:#1a2540;padding:0.7rem 2rem;border-radius:8px;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.03em">Start free trial</a>
+  <div class="quote-simple">
+    <p>
+      "I need a piece of software called DysPhilter. It helps me with communication at work. It filters harmful messages before they reach me, turns long complicated emails into simple summaries, and gives me tools to manage overwhelm. It also carries my access needs into every meeting and conversation so I do not have to keep explaining myself. It is an annual subscription and can be ordered through Neurobox."
+    </p>
+  </div>
+
+  <p style="font-size:0.9rem;color:#3a3530;margin-top:1.2rem;margin-bottom:0.5rem">
+    <strong>The full version</strong> — if your assessor wants more detail:
+  </p>
+
+  <div class="quote-box">
+    <p style="font-style:italic">
+      "I need assistive software called DysPhilter™. It is a communication accessibility platform built for neurodivergent people. It filters harmful content before it reaches me, gives me plain-language summaries of institutional communications, and provides regulation tools for when I am overwhelmed. It also includes a Universal Passport that carries my access needs into every interaction so I do not have to explain myself repeatedly. It is available as an annual SaaS subscription and can be supplied through Neurobox."
+    </p>
+  </div>
+
+  <div class="info-box" style="margin-top:1.2rem">
+    <p><strong>Too much to remember?</strong> You do not have to say all of this from memory. You can:</p>
+    <p style="margin-top:0.5rem">• Read it from your phone during the assessment</p>
+    <p>• Print this page and bring it with you</p>
+    <p>• Share this page link with your assessor by QR code or email</p>
+    <p>• Email the procurement summary above to your assessor before your meeting</p>
   </div>
 </div>
 
-<!-- ── Works Alongside ── -->
-<div class="section" style="background:#1a2540;padding:2rem 1.5rem;text-align:center;border-top:1px solid #2a3555">
-  <div class="section-title" style="color:#f5ead0;font-size:1.1rem">Works Alongside What You Already Use</div>
-  <div class="section-sub" style="color:#8a9a7a;margin-bottom:1.5rem">DysPhilter does not replace your tools. It sits beside them.</div>
-  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.8rem;max-width:700px;margin:0 auto">
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Microsoft 365</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Google Workspace</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iCloud</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">WhatsApp</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Teams</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Slack</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iOS &amp; Android</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">iPad &amp; Tablet</span>
-    <span style="background:#243050;color:#8a9a7a;padding:0.5rem 1rem;border-radius:8px;font-size:0.82rem;border:1px solid #3a4a5a">Desktop &amp; Laptop</span>
-  </div>
-</div>
-
-
-<!-- ── FAQ ── -->
-<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem;border-top:1px solid #2a3555">
-  <div class="section-title" style="color:#f5ead0;text-align:center">Questions</div>
-  <div class="section-sub" style="color:#8a9a7a;text-align:center;margin-bottom:2rem">Short answers to the things people ask</div>
-  <div style="max-width:650px;margin:0 auto">
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Do I need a diagnosis to use DysPhilter?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No. You do not need a diagnosis, a label, or a referral. DysPhilter is for everyone.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Is it really free for under 18s?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. Completely free, with no limits. We believe support should not depend on someone's age or income.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Can I get it through Access to Work?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. If you are working or self-employed, Access to Work can fund it for you. The government pays. You do not. See the funding section above.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Does it replace my other tools?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No. DysPhilter works alongside Microsoft 365, Google, WhatsApp, and everything else you already use. It sits beside your tools, not on top of them.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">I am self-employed. Can I claim this as a business expense?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. The Personal Edition includes self-employed invoicing. You can generate invoices from inside the app for your tax records.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">What if I cannot afford it?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">No one is turned away. Student and NHS discounts are available, and if the price is still a barrier, contact us.</p>
-    </details>
-
-    <details style="margin-bottom:0.8rem;background:#243050;border-radius:8px;border:1px solid #3a4a5a;padding:0">
-      <summary style="padding:1rem 1.2rem;color:#f5ead0;font-size:0.88rem;cursor:pointer;font-weight:500">Is my data private?</summary>
-      <p style="padding:0 1.2rem 1rem;color:#8a9a7a;font-size:0.82rem;line-height:1.6">Yes. Your data is yours. We do not sell it, share it, or use it for advertising. Everything is encrypted.</p>
-    </details>
-
-  </div>
-</div>
-
-
-<!-- ── Request an AtW Quote ── -->
-<div class="section" style="background:#1a2540;padding:2.5rem 1.5rem;border-top:1px solid #2a3555">
-  <div class="section-title" style="color:#f5ead0;text-align:center">Get an Access to Work Quote</div>
-  <div class="section-sub" style="color:#8a9a7a;text-align:center;margin-bottom:0.5rem">Self-employed? Employed? Not sure if you qualify?</div>
-  <div style="text-align:center;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto">
-    <p style="color:#6a7a8a;font-size:0.82rem;line-height:1.5">Tell us a bit about your situation. We will send you a formal quote you can use for your Access to Work application. The government pays &mdash; not you.</p>
-  </div>
-  <form id="atw-quote-form" style="max-width:500px;margin:0 auto">
-    <div style="margin-bottom:0.8rem">
-      <input type="text" id="atw-name" placeholder="Your name" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <input type="email" id="atw-email" placeholder="Your email" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <input type="text" id="atw-phone" placeholder="Phone (optional)" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <select id="atw-employment" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box">
-        <option value="" style="color:#000">Are you employed or self-employed?</option>
-        <option value="Employed" style="color:#000">Employed</option>
-        <option value="Self-employed" style="color:#000">Self-employed</option>
-        <option value="Both" style="color:#000">Both</option>
-        <option value="Not sure" style="color:#000">Not sure</option>
-      </select>
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <input type="text" id="atw-role" placeholder="Your job role" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <input type="text" id="atw-workplace" placeholder="Workplace name (optional)" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box" />
-    </div>
-    <div style="margin-bottom:0.8rem">
-      <textarea id="atw-challenges" placeholder="What do you find hard at work? (optional)" rows="3" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box;resize:vertical"></textarea>
-    </div>
-    <div style="margin-bottom:1rem">
-      <select id="atw-contact" style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;box-sizing:border-box">
-        <option value="Email" style="color:#000">Contact me by email</option>
-        <option value="Phone" style="color:#000">Contact me by phone</option>
-      </select>
-    </div>
-    <button type="submit" id="atw-submit" style="width:100%;padding:0.8rem 1.5rem;background:#8a9a7a;color:#1a2540;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.03em">Request my quote</button>
-    <p id="atw-msg" style="color:#8a9a7a;font-size:0.78rem;margin-top:0.6rem;min-height:1rem;text-align:center"></p>
-  </form>
-</div>
-
-<!-- ── QR ── -->
+<!-- ── QR Code Section ── -->
 <div class="section qr-section">
   <h3>Share This Page</h3>
-  <p>Scan to send this to your assessor, employer, or HR team</p>
+  <p>Scan to send this information to your assessor, employer, or HR team</p>
   <div class="qr-wrap">
-    <img src="https://base44.app/api/apps/6a086bdf9518d928b61eb935/files/mp/public/6a086bdf9518d928b61eb935/bcc1a2951_atw_qr_v3.png" alt="QR code">
+    <img src="https://base44.app/api/apps/6a086bdf9518d928b61eb935/files/mp/public/6a086bdf9518d928b61eb935/88f24280b_atw_qr_GO.png" alt="QR code linking to this page">
   </div>
 </div>
 
 <!-- ── CTA ── -->
-
-<!-- ── Email Signup ── -->
-<div style="background:#1a2540;padding:2.5rem 1.5rem;text-align:center">
-  <h3 style="font-family:Georgia,serif;font-size:1.3rem;color:#f5ead0;font-weight:400;margin-bottom:0.5rem">Stay Connected</h3>
-  <p style="color:#8a9a7a;font-size:0.85rem;margin-bottom:1.5rem;letter-spacing:0.02em">Get updates on DysPhilter™ features, Access to Work funding, and launch news.</p>
-  <form id="signup-form" style="max-width:380px;margin:0 auto">
-    <input type="email" id="signup-email" placeholder="your@email.com" required style="width:100%;padding:0.7rem 1rem;border:1px solid #3a4a5a;border-radius:8px;background:#243050;color:#f5ead0;font-size:0.9rem;margin-bottom:0.8rem;box-sizing:border-box" />
-    <button type="submit" style="width:100%;padding:0.7rem 1.5rem;background:#8a9a7a;color:#1a2540;border:none;border-radius:8px;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.05em">Sign up for updates</button>
-    <p id="signup-msg" style="color:#8a9a7a;font-size:0.78rem;margin-top:0.6rem;min-height:1rem"></p>
-  </form>
-  <p style="color:#c4b896;font-size:0.78rem;margin-top:1rem;font-weight:600">Free for under 18s. We will never share your email.</p>
-</div>
-
 <div class="cta">
   <h2>Ready to apply?</h2>
   <p>Access to Work is a government grant. It does not affect your benefits. You do not pay it back.</p>
   <a href="https://www.gov.uk/access-to-work" class="cta-button">Apply at gov.uk/access-to-work</a>
+  <a href="mailto:atw@neurobox.co.uk" class="cta-secondary">Email Neurobox</a>
 </div>
 
+<!-- ── Footer ── -->
 <div class="footer">
-  <p>DysPhilter™ · © Rosalind Millett 2026 · All rights reserved</p>
+  <p>DysPhilter™ · The Canopy Empire™ · Diverse Solutions™</p>
+  <p style="margin-top:0.3rem">© Rosalind Millett 2026 · All rights reserved</p>
   <p style="margin-top:0.5rem">Access to Work is administered by the Department for Work and Pensions (DWP)</p>
+  <p style="margin-top:0.3rem">Neurobox is an independent supplier — DWP does not mind which supplier you use</p>
 </div>
 
 </div>
-
-<script>
-document.getElementById('signup-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var email = document.getElementById('signup-email').value;
-  var msg = document.getElementById('signup-msg');
-  var btn = e.target.querySelector('button');
-  
-  if (!email) { msg.textContent = 'Please enter your email.'; return; }
-  
-  btn.textContent = 'Signing up...';
-  btn.disabled = true;
-  msg.textContent = '';
-  
-  try {
-    var response = await fetch( + api_url + , {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, source: 'dysphilter_landing_page' })
-    });
-    var data = await response.json();
-    
-    if (response.ok) {
-      msg.style.color = '#8a9a7a';
-      msg.textContent = 'Thank you. We will be in touch.';
-      document.getElementById('signup-email').value = '';
-      btn.textContent = 'Signed up';
-    } else {
-      msg.style.color = '#c4a0a0';
-      msg.textContent = data.error || 'Something went wrong. Please try again.';
-      btn.textContent = 'Sign up for updates';
-      btn.disabled = false;
-    }
-  } catch (err) {
-    msg.style.color = '#c4a0a0';
-    msg.textContent = 'Something went wrong. Please try again.';
-    btn.textContent = 'Sign up for updates';
-    btn.disabled = false;
-  }
-});
-</script>
-
-
-<script>
-document.getElementById('atw-quote-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var name = document.getElementById('atw-name').value;
-  var email = document.getElementById('atw-email').value;
-  var phone = document.getElementById('atw-phone').value;
-  var employment = document.getElementById('atw-employment').value;
-  var role = document.getElementById('atw-role').value;
-  var workplace = document.getElementById('atw-workplace').value;
-  var challenges = document.getElementById('atw-challenges').value;
-  var contact = document.getElementById('atw-contact').value;
-  var msg = document.getElementById('atw-msg');
-  var btn = document.getElementById('atw-submit');
-  
-  if (!name || !email) { msg.textContent = 'Please add your name and email.'; return; }
-  
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  msg.textContent = '';
-  msg.style.color = '#8a9a7a';
-  
-  try {
-    var response = await fetch('https://spirit-b61eb935.base44.app/functions/atwQuoteRequest', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        full_name: name, email: email, phone: phone,
-        employment_status: employment, job_role: role,
-        workplace_name: workplace, communication_challenges: challenges,
-        preferred_contact: contact
-      })
-    });
-    var data = await response.json();
-    
-    if (response.ok) {
-      msg.style.color = '#8a9a7a';
-      msg.innerHTML = 'Done. Your quote reference is <strong>' + data.quote_reference + '</strong>. We will be in touch within 2 working days.';
-      document.getElementById('atw-quote-form').reset();
-      btn.textContent = 'Quote requested';
-    } else {
-      msg.style.color = '#c4a0a0';
-      msg.textContent = data.error || 'Something went wrong. Please try again.';
-      btn.textContent = 'Request my quote';
-      btn.disabled = false;
-    }
-  } catch (err) {
-    msg.style.color = '#c4a0a0';
-    msg.textContent = 'Something went wrong. Please try again.';
-    btn.textContent = 'Request my quote';
-    btn.disabled = false;
-  }
-});
-</script>
-
 </body>
 </html>
